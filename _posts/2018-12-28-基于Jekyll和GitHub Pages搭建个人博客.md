@@ -68,7 +68,7 @@ categories: 技术教程
 
 1. 创建一个仓库  
   前往[GitHUb](https://github.com/)创建一个新的仓库，仓库名称为*username.github.io*，其中*username*是你的GitHub用户名或者组织名称。
-   ![创建GitHub仓库区](./images/create_github_repository.jpg "创建GitHub仓库区")
+   ![创建GitHub仓库区](/assets/images/create_github_repository.jpg "创建GitHub仓库区")
 
 2. 克隆仓库  
    把步骤一创建的仓库克隆到本地。
