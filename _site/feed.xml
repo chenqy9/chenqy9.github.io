@@ -1,1 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-12-28T20:02:36+08:00</updated><id>/feed.xml</id><title type="html">小王子的星球</title><subtitle>不知跬步，无以至千里</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-29T01:42:35+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">小王子星球</title><subtitle>不积跬步，无以至千里。</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">基于Jekyll和GitHub Pages搭建个人博客</title><link href="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/" rel="alternate" type="text/html" title="基于Jekyll和GitHub Pages搭建个人博客" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/">&lt;h2 id=&quot;jekyll&quot;&gt;JeKyll&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;JeKyll&lt;/a&gt;是一个基于Ruby的博客类静态网站生成器。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll是一个简单，可扩展的静态站点生成器。您可以使用自己喜欢的标记语言编写文本，然后通过布局来创建静态网站。在整个过程中，您可以调整网站URL的显示方式，布局中显示的数据等&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;基于jekyll创建静态网站&quot;&gt;基于JeKyll创建静态网站&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot;&gt;安装Ruby开发环境&lt;/a&gt; (&lt;a href=&quot;https://jekyllrb.com/docs/installation/macos/&quot;&gt;以macOS 为例&lt;/a&gt;) &lt;strong&gt;&lt;em&gt;macOS Mojave 10.14 可省略以下安装步骤&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;1.1 安装Homebrew和Ruby&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c&quot;&gt;# Install Homebrew&lt;/span&gt;
+ /usr/bin/ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+ brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;1.2 导出Ruby环境变量&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=/usr/local/opt/ruby/bin:$PATH'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;1.3 检查Ruby是否安装成功&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; which ruby
+ /usr/local/opt/ruby/bin/ruby
+ ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+ ruby 2.6.0p0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2018-12-25 revision 66547&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;x86_64-darwin18]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装打包器和jekyll&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; gem &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--user-install&lt;/span&gt; bundler jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建一个新的Jekyll网站&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; jekyll new myblog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;若提示 &lt;em&gt;command not found: jekyll&lt;/em&gt; ，需要把gem路径配置到PATH里面&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编译网站并启动本地服务&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myblog
+bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;访问&lt;a href=&quot;http://localhost:4000/&quot;&gt;http://localhost:4000/&lt;/a&gt;查看效果&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;github-pages&quot;&gt;GitHub Pages&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;是直接从GitHub仓库托管的个人网站和项目网站。&lt;/p&gt;
+
+&lt;h3 id=&quot;基于github-pages托管网站&quot;&gt;基于GitHub Pages托管网站&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建一个仓库&lt;br /&gt;
+  前往&lt;a href=&quot;https://github.com/&quot;&gt;GitHUb&lt;/a&gt;创建一个新的仓库，仓库名称为&lt;em&gt;username.github.io&lt;/em&gt;，其中&lt;em&gt;username&lt;/em&gt;是你的GitHub用户名或者组织名称。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;克隆仓库&lt;br /&gt;
+把步骤一创建的仓库克隆到本地。&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+git clone https://github.com/username/username.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建第一个页面&lt;br /&gt;
+进入项目目录，新建一个index.html的文件。&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;username.github.io
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;推送到远程仓库&lt;br /&gt;
+增加、提交和推送你的更改&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+git add &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;初始提交&quot;&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;你已经成功完成&lt;br /&gt;
+访问&lt;a href=&quot;https://username.github.io&quot;&gt;&lt;em&gt;https://username.github.io&lt;/em&gt;&lt;/a&gt;查看效果&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;整合部署&quot;&gt;整合部署&lt;/h2&gt;
+
+&lt;p&gt;将Jekyll生成的静态网站复制到username.github.io仓库并提交推送到GitHub&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; myblog/&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; username.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;后面直接修改仓库文件，用Jekyll编译提交即可。&lt;/p&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="博客" /><category term="Jekyll" /><category term="GitHub Pages" /><category term="markdown" /><summary type="html">JeKyll</summary></entry></feed>
