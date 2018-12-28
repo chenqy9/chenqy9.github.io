@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "基于Jekyll和GitHub Pages搭建个人博客"
+date:   2018-12-28 19:16:28
+categories: 技术教程
+---
+
 # 基于Jekyll和GitHub Pages搭建个人博客
 
 ## JeKyll
