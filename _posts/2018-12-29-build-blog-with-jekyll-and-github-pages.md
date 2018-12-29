@@ -1,5 +1,11 @@
 ---
 title: "基于Jekyll和GitHub Pages搭建个人博客"
+layout: single
+classes: wide
+author_profile: true
+read_time: false
+comments: null
+related: true
 categories:
   - 文章教程
 tags:
@@ -8,6 +14,8 @@ tags:
   - GitHub Pages
   - markdown
 ---
+
+## 本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。
 
 ## JeKyll
 
