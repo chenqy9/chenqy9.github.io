@@ -27,6 +27,7 @@ gem "minimal-mistakes-jekyll"
 #
 # If you have any other plugins, put them here!
 gem 'jekyll-admin', group: :jekyll_plugins
+gem 'jekyll-seo-tag'
 
 group :jekyll_plugins do
 end
