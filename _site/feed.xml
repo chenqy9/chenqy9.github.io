@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://chenqy9.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chenqy9.github.io/" rel="alternate" type="text/html" /><updated>2019-01-03T10:37:47+08:00</updated><id>https://chenqy9.github.io/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">Linux离线安装node</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="alternate" type="text/html" title="Linux离线安装node" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/">&lt;p&gt;本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://chenqy9.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chenqy9.github.io/" rel="alternate" type="text/html" /><updated>2019-01-03T16:08:30+08:00</updated><id>https://chenqy9.github.io/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">Linux离线安装node</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="alternate" type="text/html" title="Linux离线安装node" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/">&lt;p&gt;本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。&lt;/p&gt;
 
 &lt;p&gt;1、 到&lt;a href=&quot;https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz&quot;&gt;官网&lt;/a&gt;下载安装包，并scp上传到目标服务器。&lt;/p&gt;
 
@@ -62,7 +62,116 @@ npm version
 &lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin/npm /usr/bin/npm
 
 &lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin/npx /usr/bin/npx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="node" /><category term="linux" /><summary type="html">本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。</summary></entry><entry><title type="html">CAS安装</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" rel="alternate" type="text/html" title="CAS安装" /><published>2018-12-30T00:00:00+08:00</published><updated>2018-12-30T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">&lt;p&gt;CAS安装是一个基本的面向源的过程，我们建议使用&lt;a href=&quot;http://maven.apache.org/plugins/maven-war-plugin/overlays.html&quot;&gt;WAR overlay&lt;/a&gt;项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像&lt;a href=&quot;http://tomcat.apache.org/whichversion.html&quot;&gt;Tomcat&lt;/a&gt;这样的Java servlet容器上。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="node" /><category term="linux" /><summary type="html">本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。</summary></entry><entry><title type="html">Linux离线安装yarn和配置离线仓库</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/" rel="alternate" type="text/html" title="Linux离线安装yarn和配置离线仓库" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/">&lt;p&gt;yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。&lt;/p&gt;
+
+&lt;h2 id=&quot;优势&quot;&gt;优势&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;极其快速&lt;/strong&gt;&lt;br /&gt;
+Yarn 会缓存它下载的每个包，所以无需重复下载。它还能并行化操作以最大化资源利用率，安装速度之快前所未有。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;特别安全&lt;/strong&gt;&lt;br /&gt;
+Yarn会在每个安装包被执行前校验其完整性。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;超级可靠&lt;/strong&gt;&lt;br /&gt;
+Yarn 使用格式详尽而又简洁的 lockfile文件 和确定性算法来安装依赖，能够保证在一个系统上的运行的安装过程也会以同样的方式运行在其他系统上。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;离线模式&lt;/strong&gt;&lt;br /&gt;
+如果你之前安装过某个包，你就可以在没有网络连接的情况下再次安装它。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;确定性&lt;/strong&gt;&lt;br /&gt;
+不管是什么顺序，在不同的机器上的依赖会以同一方式安装。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;网络性能&lt;/strong&gt;&lt;br /&gt;
+Yarn可以高效地队列化请求并且避免请求瀑布化，使网络利用率最大化。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;相同的软件包&lt;/strong&gt;&lt;br /&gt;
+从 npm 安装软件包并使用相同的包管理流程。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;网络适应&lt;/strong&gt;&lt;br /&gt;
+单个请求失败不会导致安装失败，请求失败时会重试。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;扁平模式&lt;/strong&gt;&lt;br /&gt;
+解析不匹配的依赖版本为一个单一的版本来避免导致多个版本。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;安装yarn&quot;&gt;安装yarn&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;从&lt;a href=&quot;https://yarnpkg.com/latest.tar.gz&quot;&gt;官网&lt;/a&gt;下载源码包并上传到目标服务器&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; ~/Downloads/yarn-v1.12.3.tar.gz user@host:path
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;解压程序包到目标目录&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;zvxf yarn-v1.12.3.tar.gz &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; /opt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;设置环境变量vim /etc/profile，将下面代码添加到文件最后&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;NODEJS_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/opt/yarn-v1.12.3/bin
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$NODEJS_HOME&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;刷新文件配置&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /etc/profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;运行命令来测试 Yarn 是否安装：&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h2 id=&quot;配置离线镜像&quot;&gt;配置离线镜像&lt;/h2&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;首先我们需要设置一个目录作为我们的“离线镜像”存储，我们可以使用yarn config命令：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;yarn-offline-mirror ./npm-packages-offline-cache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;./npm-packages-offline-cache是​​相对于主文件夹的示例位置，其中所有source.tar.gz文件将从注册表下载。&lt;/p&gt;
+
+&lt;p&gt;脱机镜像不会删除tar包。为了使缓存文件夹保持最新，您需要将以下内容添加到配置文件中：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;yarn-offline-mirror-pruning &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如何测试以确保它处于脱机状态？&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;使用“yarn cache clean”清除全局缓存&lt;/li&gt;
+  &lt;li&gt;关掉wifi&lt;/li&gt;
+  &lt;li&gt;运行“yarn install -offline”。离线标志将确保yarn不会到达网络&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;简而言之，要为您的项目启用“离线镜像”，您需要：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;将“yarn-offline-mirror”配置添加到.yarnrc文件中&lt;/li&gt;
+  &lt;li&gt;使用“yarn install”命令生成一个新的yarn.lock&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="linux" /><category term="yarn" /><summary type="html">yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。</summary></entry><entry><title type="html">CAS安装</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" rel="alternate" type="text/html" title="CAS安装" /><published>2018-12-30T00:00:00+08:00</published><updated>2018-12-30T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">&lt;p&gt;CAS安装是一个基本的面向源的过程，我们建议使用&lt;a href=&quot;http://maven.apache.org/plugins/maven-war-plugin/overlays.html&quot;&gt;WAR overlay&lt;/a&gt;项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像&lt;a href=&quot;http://tomcat.apache.org/whichversion.html&quot;&gt;Tomcat&lt;/a&gt;这样的Java servlet容器上。&lt;/p&gt;
 
 &lt;p&gt;WAR overlay项目提供参考和研究。&lt;/p&gt;
 

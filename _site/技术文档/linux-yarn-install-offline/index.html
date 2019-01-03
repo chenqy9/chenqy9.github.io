@@ -11,56 +11,56 @@
 
 <!-- begin _includes/seo.html -->
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>CAS安装 | 不积跬步，无以至千里</title>
+<title>Linux离线安装yarn和配置离线仓库 | 不积跬步，无以至千里</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="CAS安装" />
+<meta property="og:title" content="Linux离线安装yarn和配置离线仓库" />
 <meta name="author" content="chenqy9" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。" />
-<meta property="og:description" content="CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。" />
-<link rel="canonical" href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" />
-<meta property="og:url" content="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" />
+<meta name="description" content="yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。" />
+<meta property="og:description" content="yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。" />
+<link rel="canonical" href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/" />
+<meta property="og:url" content="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/" />
 <meta property="og:site_name" content="不积跬步，无以至千里" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-12-30T00:00:00+08:00" />
+<meta property="article:published_time" content="2019-01-03T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@chenqy9" />
 <script type="application/ld+json">
-{"description":"CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。","author":{"@type":"Person","name":"chenqy9"},"@type":"BlogPosting","url":"https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/","headline":"CAS安装","dateModified":"2018-12-30T00:00:00+08:00","datePublished":"2018-12-30T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/"},"@context":"http://schema.org"}</script>
+{"description":"yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。","author":{"@type":"Person","name":"chenqy9"},"@type":"BlogPosting","url":"https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/","headline":"Linux离线安装yarn和配置离线仓库","dateModified":"2019-01-03T00:00:00+08:00","datePublished":"2019-01-03T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<title>CAS安装 - 不积跬步，无以至千里</title>
-<meta name="description" content="CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。">
+<title>Linux离线安装yarn和配置离线仓库 - 不积跬步，无以至千里</title>
+<meta name="description" content="yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="不积跬步，无以至千里">
-<meta property="og:title" content="CAS安装">
-<meta property="og:url" content="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">
+<meta property="og:title" content="Linux离线安装yarn和配置离线仓库">
+<meta property="og:url" content="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/">
 
 
-  <meta property="og:description" content="CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2018-12-30T00:00:00+08:00">
+  <meta property="og:description" content="yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2019-01-03T00:00:00+08:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">
+
+<link rel="canonical" href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/">
 
 
 
@@ -278,15 +278,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="CAS安装">
-    <meta itemprop="description" content="CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。">
-    <meta itemprop="datePublished" content="December 30, 2018">
+    <meta itemprop="headline" content="Linux离线安装yarn和配置离线仓库">
+    <meta itemprop="description" content="yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。">
+    <meta itemprop="datePublished" content="January 03, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">CAS安装
+          <h1 id="page-title" class="page__title" itemprop="headline">Linux离线安装yarn和配置离线仓库
 </h1>
           
         </header>
@@ -294,38 +294,116 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>CAS安装是一个基本的面向源的过程，我们建议使用<a href="http://maven.apache.org/plugins/maven-war-plugin/overlays.html">WAR overlay</a>项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像<a href="http://tomcat.apache.org/whichversion.html">Tomcat</a>这样的Java servlet容器上。</p>
+        <p>yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。</p>
 
-<p>WAR overlay项目提供参考和研究。</p>
-
-<h3 id="gradle">Gradle</h3>
+<h2 id="优势">优势</h2>
 
 <ul>
-  <li><a href="https://github.com/apereo/cas-gradle-overlay-template/tree/4.2">CAS Gradle Overlay</a></li>
+  <li>
+    <p><strong>极其快速</strong><br />
+Yarn 会缓存它下载的每个包，所以无需重复下载。它还能并行化操作以最大化资源利用率，安装速度之快前所未有。</p>
+  </li>
+  <li>
+    <p><strong>特别安全</strong><br />
+Yarn会在每个安装包被执行前校验其完整性。</p>
+  </li>
+  <li>
+    <p><strong>超级可靠</strong><br />
+Yarn 使用格式详尽而又简洁的 lockfile文件 和确定性算法来安装依赖，能够保证在一个系统上的运行的安装过程也会以同样的方式运行在其他系统上。</p>
+  </li>
 </ul>
 
-<h3 id="maven">Maven</h3>
+<h2 id="特点">特点</h2>
 
 <ul>
-  <li><a href="https://github.com/apereo/cas-overlay-template/tree/4.2">CAS Maven Overlay</a></li>
+  <li>
+    <p><strong>离线模式</strong><br />
+如果你之前安装过某个包，你就可以在没有网络连接的情况下再次安装它。</p>
+  </li>
+  <li>
+    <p><strong>确定性</strong><br />
+不管是什么顺序，在不同的机器上的依赖会以同一方式安装。</p>
+  </li>
+  <li>
+    <p><strong>网络性能</strong><br />
+Yarn可以高效地队列化请求并且避免请求瀑布化，使网络利用率最大化。</p>
+  </li>
+  <li>
+    <p><strong>相同的软件包</strong><br />
+从 npm 安装软件包并使用相同的包管理流程。</p>
+  </li>
+  <li>
+    <p><strong>网络适应</strong><br />
+单个请求失败不会导致安装失败，请求失败时会重试。</p>
+  </li>
+  <li>
+    <p><strong>扁平模式</strong><br />
+解析不匹配的依赖版本为一个单一的版本来避免导致多个版本。</p>
+  </li>
 </ul>
 
-<p>CAS使用Spring Webflow以模块化和可配置的方式驱动登录过程; login-webflow.xml文件包含流中状态和转换的简单描述。自定义此文件可能是Spring XML配置文件中除组件配置之外最常见的配置问题。有关各种CAS流程的详细说明以及常见配置点的讨论，请参见“Spring Webflow自定义指南”。</p>
-
-<h3 id="spring-配置">Spring 配置</h3>
-
-<p>CAS服务器在很大程度上依赖于Spring框架。 spring-configuration目录下有精确和特定的XML配置文件，用于控制CAS的各种属性以及cas-servlet.xml和deployerConfigContext.xml，后者主要是CAS采用者希望将其包含在环境覆盖中 - 特定的CAS设置。</p>
-
-<p>如果需要通过Maven覆盖过程，可以覆盖XML配置文件中的Spring bean以更改行为。有两种方法：</p>
+<h2 id="安装yarn">安装yarn</h2>
 
 <ol>
   <li>
-    <p>XML文件可以从CAS版本的源获得，并在Maven重叠版本中以相同的名称放置在相同的确切路径上。如果配置正确，则构建将使用本地提供的XML文件而不是默认值。</p>
+    <p>从<a href="https://yarnpkg.com/latest.tar.gz">官网</a>下载源码包并上传到目标服务器</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp <span class="nt">-r</span> ~/Downloads/yarn-v1.12.3.tar.gz user@host:path
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>CAS服务器能够加载XML配置文件的模式以覆盖默认提供的内容。打算否决CAS默认行为的这些配置文件可以放在/ WEB-INF /中，并且必须使用以下模式命名：cas-servlet - * .xml。放在此文件中的Bean将覆盖其他文件。</p>
+    <p>解压程序包到目标目录</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tar </span>zvxf yarn-v1.12.3.tar.gz <span class="nt">-C</span> /opt
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>设置环境变量vim /etc/profile，将下面代码添加到文件最后</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">NODEJS_HOME</span><span class="o">=</span>/opt/yarn-v1.12.3/bin
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$NODEJS_HOME</span>:<span class="nv">$PATH</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>刷新文件配置</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span> /etc/profile
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>运行命令来测试 Yarn 是否安装：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn <span class="nt">--version</span>
+</code></pre></div>    </div>
+    <h2 id="配置离线镜像">配置离线镜像</h2>
   </li>
 </ol>
+
+<p>首先我们需要设置一个目录作为我们的“离线镜像”存储，我们可以使用yarn config命令：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn config <span class="nb">set </span>yarn-offline-mirror ./npm-packages-offline-cache
+</code></pre></div></div>
+
+<p>./npm-packages-offline-cache是​​相对于主文件夹的示例位置，其中所有source.tar.gz文件将从注册表下载。</p>
+
+<p>脱机镜像不会删除tar包。为了使缓存文件夹保持最新，您需要将以下内容添加到配置文件中：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn config <span class="nb">set </span>yarn-offline-mirror-pruning <span class="nb">true</span>
+</code></pre></div></div>
+<p>如何测试以确保它处于脱机状态？</p>
+
+<ul>
+  <li>使用“yarn cache clean”清除全局缓存</li>
+  <li>关掉wifi</li>
+  <li>运行“yarn install -offline”。离线标志将确保yarn不会到达网络</li>
+</ul>
+
+<p>简而言之，要为您的项目启用“离线镜像”，您需要：</p>
+
+<ul>
+  <li>将“yarn-offline-mirror”配置添加到.yarnrc文件中</li>
+  <li>使用“yarn install”命令生成一个新的yarn.lock</li>
+</ul>
 
         
       </section>
@@ -346,15 +424,11 @@
     
       
       
-      <a href="/tags/#cas" class="page__taxonomy-item" rel="tag">CAS</a><span class="sep">, </span>
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">linux</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95" class="page__taxonomy-item" rel="tag">单点登录</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#%E5%AE%89%E8%A3%85" class="page__taxonomy-item" rel="tag">安装</a>
+      <a href="/tags/#yarn" class="page__taxonomy-item" rel="tag">yarn</a>
     
     </span>
   </p>
@@ -382,7 +456,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 更新时间:</strong> <time datetime="2018-12-30T00:00:00+08:00">December 30, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 更新时间:</strong> <time datetime="2019-01-03T00:00:00+08:00">January 03, 2019</time></p>
         
       </footer>
 
@@ -391,12 +465,11 @@
       
   <nav class="pagination">
     
-      <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/" class="pagination--pager" title="CAS入门
+      <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" class="pagination--pager" title="Linux离线安装node
 ">向前</a>
     
     
-      <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" class="pagination--pager" title="Linux离线安装node
-">向后</a>
+      <a href="#" class="pagination--pager disabled">向后</a>
     
   </nav>
 
@@ -420,12 +493,12 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/" rel="permalink">Linux离线安装yarn和配置离线仓库
+        <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="permalink">Linux离线安装node
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。
+    <p class="archive__item-excerpt" itemprop="description">本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。
 
 </p>
   </article>
@@ -441,12 +514,12 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="permalink">Linux离线安装node
+        <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" rel="permalink">CAS安装
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。
+    <p class="archive__item-excerpt" itemprop="description">CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。
 
 </p>
   </article>

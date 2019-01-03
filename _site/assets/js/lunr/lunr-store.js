@@ -18,4 +18,9 @@ var store = [{
         "excerpt":"本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。 1、 到官网下载安装包，并scp上传到目标服务器。 scp -r ~/Downloads/node-v10.15.0-linux-x64.tar.xz user@host:path 2、将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs VERSION=v10.15.0 DISTRO=linux-x64 sudo mkdir /usr/local/lib/nodejs sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs sudo mv /usr/local/lib/nodejs/node-$VERSION-$DISTRO /usr/local/lib/nodejs/node-$VERSION 3、设置环境变量vim /etc/profile，将下面\b代码添加到文件最后 # Nodejs export NODEJS_HOME=/usr/local/lib/nodejs/node-$VERSION/bin export PATH=$NODEJS_HOME:$PATH 4、刷新文件配置 . /etc/profile 5、测试安装 node -v npm version npx -v 正常输出是： node -v v10.15.0 npm version {...","categories": ["技术文档"],
         "tags": ["node","linux"],
         "url": "https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/",
+        "teaser":null},{
+        "title": "Linux离线安装yarn和配置离线仓库",
+        "excerpt":"yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。 优势 极其快速 Yarn 会缓存它下载的每个包，所以无需重复下载。它还能并行化操作以最大化资源利用率，安装速度之快前所未有。 特别安全 Yarn会在每个安装包被执行前校验其完整性。 超级可靠 Yarn 使用格式详尽而又简洁的 lockfile文件 和确定性算法来安装依赖，能够保证在一个系统上的运行的安装过程也会以同样的方式运行在其他系统上。 特点 离线模式 如果你之前安装过某个包，你就可以在没有网络连接的情况下再次安装它。 确定性 不管是什么顺序，在不同的机器上的依赖会以同一方式安装。 网络性能 Yarn可以高效地队列化请求并且避免请求瀑布化，使网络利用率最大化。 相同的软件包 从 npm 安装软件包并使用相同的包管理流程。 网络适应 单个请求失败不会导致安装失败，请求失败时会重试。 扁平模式 解析不匹配的依赖版本为一个单一的版本来避免导致多个版本。 安装yarn 从官网下载源码包并上传到目标服务器 scp -r ~/Downloads/yarn-v1.12.3.tar.gz user@host:path 解压程序包到目标目录 tar zvxf yarn-v1.12.3.tar.gz -C /opt 设置环境变量vim /etc/profile，将下面\b代码添加到文件最后 export NODEJS_HOME=/opt/yarn-v1.12.3/bin export PATH=$NODEJS_HOME:$PATH 刷新文件配置 . /etc/profile 运行命令来测试 Yarn...","categories": ["技术文档"],
+        "tags": ["linux","yarn"],
+        "url": "https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/",
         "teaser":null}]
