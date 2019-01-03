@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://chenqy9.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chenqy9.github.io/" rel="alternate" type="text/html" /><updated>2019-01-03T10:30:41+08:00</updated><id>https://chenqy9.github.io/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">Linux离线安装node</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="alternate" type="text/html" title="Linux离线安装node" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/">&lt;p&gt;本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://chenqy9.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chenqy9.github.io/" rel="alternate" type="text/html" /><updated>2019-01-03T10:37:47+08:00</updated><id>https://chenqy9.github.io/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">Linux离线安装node</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="alternate" type="text/html" title="Linux离线安装node" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/">&lt;p&gt;本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;到&lt;a href=&quot;https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz&quot;&gt;官网&lt;/a&gt;下载安装包，并scp上传到目标服务器。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;1、 到&lt;a href=&quot;https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz&quot;&gt;官网&lt;/a&gt;下载安装包，并scp上传到目标服务器。&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; ~/Downloads/node-v10.15.0-linux-x64.tar.xz user@host:path
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;2、将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;VERSION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;v10.15.0
 &lt;span class=&quot;nv&quot;&gt;DISTRO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;linux-x64
@@ -18,25 +14,19 @@
 &lt;span class=&quot;nb&quot;&gt;sudo mv&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$DISTRO&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;设置环境变量vim /etc/profile，将下面代码添加到文件最后&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;3、设置环境变量vim /etc/profile，将下面代码添加到文件最后&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Nodejs&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;NODEJS_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin
 &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$NODEJS_HOME&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;刷新文件配置&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;4、刷新文件配置&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /etc/profile
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;测试安装&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;5、测试安装&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
 npm version

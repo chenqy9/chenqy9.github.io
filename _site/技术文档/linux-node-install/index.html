@@ -289,14 +289,6 @@
           <h1 id="page-title" class="page__title" itemprop="headline">Linux离线安装node
 </h1>
           
-            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  少于 1 分钟读完
-</p>
-          
         </header>
       
 
@@ -304,16 +296,12 @@
         
         <p>本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。</p>
 
-<ol>
-  <li>到<a href="https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz">官网</a>下载安装包，并scp上传到目标服务器。</li>
-</ol>
+<p>1、 到<a href="https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz">官网</a>下载安装包，并scp上传到目标服务器。</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp <span class="nt">-r</span> ~/Downloads/node-v10.15.0-linux-x64.tar.xz user@host:path
 </code></pre></div></div>
 
-<ol>
-  <li>将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs</li>
-</ol>
+<p>2、将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">VERSION</span><span class="o">=</span>v10.15.0
 <span class="nv">DISTRO</span><span class="o">=</span>linux-x64
@@ -322,25 +310,19 @@
 <span class="nb">sudo mv</span> /usr/local/lib/nodejs/node-<span class="nv">$VERSION</span>-<span class="nv">$DISTRO</span> /usr/local/lib/nodejs/node-<span class="nv">$VERSION</span>
 </code></pre></div></div>
 
-<ol>
-  <li>设置环境变量vim /etc/profile，将下面代码添加到文件最后</li>
-</ol>
+<p>3、设置环境变量vim /etc/profile，将下面代码添加到文件最后</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nodejs</span>
 <span class="nb">export </span><span class="nv">NODEJS_HOME</span><span class="o">=</span>/usr/local/lib/nodejs/node-<span class="nv">$VERSION</span>/bin
 <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$NODEJS_HOME</span>:<span class="nv">$PATH</span>
 </code></pre></div></div>
 
-<ol>
-  <li>刷新文件配置</li>
-</ol>
+<p>4、刷新文件配置</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span> /etc/profile
 </code></pre></div></div>
 
-<ol>
-  <li>测试安装</li>
-</ol>
+<p>5、测试安装</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node <span class="nt">-v</span>
 npm version

@@ -2,6 +2,7 @@
 title: Linux离线安装node
 layout: single
 author_profile: true
+read_time: false
 comments: null
 related: true
 classes: wide
@@ -14,13 +15,13 @@ tags:
 
 本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。  
 
-1. 到[官网](https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz)下载安装包，并scp上传到目标服务器。
+1、 到[官网](https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz)下载安装包，并scp上传到目标服务器。
 
 ``` bash
 scp -r ~/Downloads/node-v10.15.0-linux-x64.tar.xz user@host:path
 ```
 
-2. 将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs
+2、将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs
 
 ``` bash
 VERSION=v10.15.0
@@ -30,7 +31,7 @@ sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
 sudo mv /usr/local/lib/nodejs/node-$VERSION-$DISTRO /usr/local/lib/nodejs/node-$VERSION
 ```
 
-3. 设置环境变量vim /etc/profile，将下面代码添加到文件最后
+3、设置环境变量vim /etc/profile，将下面代码添加到文件最后
 
 ``` bash
 # Nodejs
@@ -38,13 +39,13 @@ export NODEJS_HOME=/usr/local/lib/nodejs/node-$VERSION/bin
 export PATH=$NODEJS_HOME:$PATH
 ```
 
-4. 刷新文件配置
+4、刷新文件配置
 
 ``` bash
 . /etc/profile
 ```
 
-5. 测试安装
+5、测试安装
 
 ``` bash
 node -v

@@ -15,7 +15,7 @@ var store = [{
         "url": "https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/",
         "teaser":null},{
         "title": "Linux离线安装node",
-        "excerpt":"本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。 到官网下载安装包，并scp上传到目标服务器。 scp -r ~/Downloads/node-v10.15.0-linux-x64.tar.xz user@host:path 将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs VERSION=v10.15.0 DISTRO=linux-x64 sudo mkdir /usr/local/lib/nodejs sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs sudo mv /usr/local/lib/nodejs/node-$VERSION-$DISTRO /usr/local/lib/nodejs/node-$VERSION 设置环境变量vim /etc/profile，将下面\b代码添加到文件最后 # Nodejs export NODEJS_HOME=/usr/local/lib/nodejs/node-$VERSION/bin export PATH=$NODEJS_HOME:$PATH 刷新文件配置 . /etc/profile 测试安装 node -v npm version npx -v 正常输出是： node -v v10.15.0 npm version { npm:...","categories": ["技术文档"],
+        "excerpt":"本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。 1、 到官网下载安装包，并scp上传到目标服务器。 scp -r ~/Downloads/node-v10.15.0-linux-x64.tar.xz user@host:path 2、将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs VERSION=v10.15.0 DISTRO=linux-x64 sudo mkdir /usr/local/lib/nodejs sudo tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs sudo mv /usr/local/lib/nodejs/node-$VERSION-$DISTRO /usr/local/lib/nodejs/node-$VERSION 3、设置环境变量vim /etc/profile，将下面\b代码添加到文件最后 # Nodejs export NODEJS_HOME=/usr/local/lib/nodejs/node-$VERSION/bin export PATH=$NODEJS_HOME:$PATH 4、刷新文件配置 . /etc/profile 5、测试安装 node -v npm version npx -v 正常输出是： node -v v10.15.0 npm version {...","categories": ["技术文档"],
         "tags": ["node","linux"],
         "url": "https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/",
         "teaser":null}]
