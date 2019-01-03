@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-29T15:02:53+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">CAS安装</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" rel="alternate" type="text/html" title="CAS安装" /><published>2018-12-30T00:00:00+08:00</published><updated>2018-12-30T00:00:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">&lt;p&gt;CAS安装是一个基本的面向源的过程，我们建议使用&lt;a href=&quot;http://maven.apache.org/plugins/maven-war-plugin/overlays.html&quot;&gt;WAR overlay&lt;/a&gt;项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像&lt;a href=&quot;http://tomcat.apache.org/whichversion.html&quot;&gt;Tomcat&lt;/a&gt;这样的Java servlet容器上。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://chenqy9.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chenqy9.github.io/" rel="alternate" type="text/html" /><updated>2019-01-03T10:30:41+08:00</updated><id>https://chenqy9.github.io/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">Linux离线安装node</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="alternate" type="text/html" title="Linux离线安装node" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/">&lt;p&gt;本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;到&lt;a href=&quot;https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz&quot;&gt;官网&lt;/a&gt;下载安装包，并scp上传到目标服务器。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; ~/Downloads/node-v10.15.0-linux-x64.tar.xz user@host:path
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;将二进制存档解压缩到您要安装Node的任何目录，我使用/usr/ local/lib/nodejs&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;VERSION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;v10.15.0
+&lt;span class=&quot;nv&quot;&gt;DISTRO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;linux-x64
+&lt;span class=&quot;nb&quot;&gt;sudo mkdir&lt;/span&gt; /usr/local/lib/nodejs
+&lt;span class=&quot;nb&quot;&gt;sudo tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-xJvf&lt;/span&gt; node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$DISTRO&lt;/span&gt;.tar.xz &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; /usr/local/lib/nodejs
+&lt;span class=&quot;nb&quot;&gt;sudo mv&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;-&lt;span class=&quot;nv&quot;&gt;$DISTRO&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;设置环境变量vim /etc/profile，将下面代码添加到文件最后&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Nodejs&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;NODEJS_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$NODEJS_HOME&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;刷新文件配置&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /etc/profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;测试安装&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+npm version
+npx &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;正常输出是：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+v10.15.0
+npm version
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; npm: &lt;span class=&quot;s1&quot;&gt;'6.4.1'&lt;/span&gt;,
+  ares: &lt;span class=&quot;s1&quot;&gt;'1.15.0'&lt;/span&gt;,
+  cldr: &lt;span class=&quot;s1&quot;&gt;'33.1'&lt;/span&gt;,
+  http_parser: &lt;span class=&quot;s1&quot;&gt;'2.8.0'&lt;/span&gt;,
+  icu: &lt;span class=&quot;s1&quot;&gt;'62.1'&lt;/span&gt;,
+  modules: &lt;span class=&quot;s1&quot;&gt;'64'&lt;/span&gt;,
+  napi: &lt;span class=&quot;s1&quot;&gt;'3'&lt;/span&gt;,
+  nghttp2: &lt;span class=&quot;s1&quot;&gt;'1.34.0'&lt;/span&gt;,
+  node: &lt;span class=&quot;s1&quot;&gt;'10.15.0'&lt;/span&gt;,
+  openssl: &lt;span class=&quot;s1&quot;&gt;'1.1.0j'&lt;/span&gt;,
+  tz: &lt;span class=&quot;s1&quot;&gt;'2018e'&lt;/span&gt;,
+  unicode: &lt;span class=&quot;s1&quot;&gt;'11.0'&lt;/span&gt;,
+  uv: &lt;span class=&quot;s1&quot;&gt;'1.23.2'&lt;/span&gt;,
+  v8: &lt;span class=&quot;s1&quot;&gt;'6.8.275.32-node.45'&lt;/span&gt;,
+  zlib: &lt;span class=&quot;s1&quot;&gt;'1.2.11'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;创建sudo链接：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin/node /usr/bin/node
+
+&lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin/npm /usr/bin/npm
+
+&lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin/npx /usr/bin/npx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="node" /><category term="linux" /><summary type="html">本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。</summary></entry><entry><title type="html">CAS安装</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" rel="alternate" type="text/html" title="CAS安装" /><published>2018-12-30T00:00:00+08:00</published><updated>2018-12-30T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">&lt;p&gt;CAS安装是一个基本的面向源的过程，我们建议使用&lt;a href=&quot;http://maven.apache.org/plugins/maven-war-plugin/overlays.html&quot;&gt;WAR overlay&lt;/a&gt;项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像&lt;a href=&quot;http://tomcat.apache.org/whichversion.html&quot;&gt;Tomcat&lt;/a&gt;这样的Java servlet容器上。&lt;/p&gt;
 
 &lt;p&gt;WAR overlay项目提供参考和研究。&lt;/p&gt;
 
@@ -29,7 +103,7 @@
   &lt;li&gt;
     &lt;p&gt;CAS服务器能够加载XML配置文件的模式以覆盖默认提供的内容。打算否决CAS默认行为的这些配置文件可以放在/ WEB-INF /中，并且必须使用以下模式命名：cas-servlet - * .xml。放在此文件中的Bean将覆盖其他文件。&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="CAS" /><category term="单点登录" /><category term="安装" /><summary type="html">CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。</summary></entry><entry><title type="html">基于Jekyll和GitHub Pages搭建个人博客</title><link href="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/" rel="alternate" type="text/html" title="基于Jekyll和GitHub Pages搭建个人博客" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/">&lt;h2 id=&quot;本文介绍如何利用jekyll创建一个静态站点并托管到github-pages上&quot;&gt;本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="CAS" /><category term="单点登录" /><category term="安装" /><summary type="html">CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。</summary></entry><entry><title type="html">基于Jekyll和GitHub Pages搭建个人博客</title><link href="https://chenqy9.github.io/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/" rel="alternate" type="text/html" title="基于Jekyll和GitHub Pages搭建个人博客" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages</id><content type="html" xml:base="https://chenqy9.github.io/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/">&lt;h2 id=&quot;本文介绍如何利用jekyll创建一个静态站点并托管到github-pages上&quot;&gt;本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。&lt;/h2&gt;
 
 &lt;h2 id=&quot;jekyll&quot;&gt;JeKyll&lt;/h2&gt;
 
@@ -140,7 +214,7 @@ git push &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; origin master
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; myblog/&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; username.github.io
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;后面直接修改仓库文件，用Jekyll编译提交即可。&lt;/p&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="博客" /><category term="Jekyll" /><category term="GitHub Pages" /><category term="markdown" /><summary type="html">本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。</summary></entry><entry><title type="html">CAS入门</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/" rel="alternate" type="text/html" title="CAS入门" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/">&lt;p&gt;企业单点登录 - CAS提供友好的开源社区，积极支持并为项目做出贡献。虽然该项目植根于高级开放源代码，但它已发展成为跨越财富500强企业和小型专用设备的国际受众。&lt;/p&gt;
+&lt;p&gt;后面直接修改仓库文件，用Jekyll编译提交即可。&lt;/p&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="博客" /><category term="Jekyll" /><category term="GitHub Pages" /><category term="markdown" /><summary type="html">本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。</summary></entry><entry><title type="html">CAS入门</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/" rel="alternate" type="text/html" title="CAS入门" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/">&lt;p&gt;企业单点登录 - CAS提供友好的开源社区，积极支持并为项目做出贡献。虽然该项目植根于高级开放源代码，但它已发展成为跨越财富500强企业和小型专用设备的国际受众。&lt;/p&gt;
 
 &lt;p&gt;CAS为Web提供企业单点登录服务：&lt;/p&gt;
 
