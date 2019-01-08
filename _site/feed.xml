@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://chenqy9.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chenqy9.github.io/" rel="alternate" type="text/html" /><updated>2019-01-03T16:08:30+08:00</updated><id>https://chenqy9.github.io/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">Linux离线安装node</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="alternate" type="text/html" title="Linux离线安装node" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/">&lt;p&gt;本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-08T15:58:54+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">不积跬步，无以至千里</title><subtitle>全栈开发，前端技术，Java后台开发，Linux，大数据，数据库</subtitle><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><entry><title type="html">Linux安装升级jenkins</title><link href="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/linux-jenkins-install-yum/" rel="alternate" type="text/html" title="Linux安装升级jenkins" /><published>2019-01-08T00:00:00+08:00</published><updated>2019-01-08T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/linux-jenkins-install-yum</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/linux-jenkins-install-yum/">&lt;h2 id=&quot;本文介绍在centos操作系统下通过yum安装jenkins并通过下载官方war包的方式升级&quot;&gt;本文介绍在centos操作系统下通过yum安装jenkins，并通过下载官方war包的方式升级。&lt;/h2&gt;
+
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装JDK&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装Jenkins&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 如果没安装wget，可先安装或用curl&lt;/span&gt;
+yum &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; wget
+
+&lt;span class=&quot;c&quot;&gt;# 添加Jenkins库到yum库&lt;/span&gt;
+wget &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+
+rpm &lt;span class=&quot;nt&quot;&gt;--import&lt;/span&gt; https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
+yum &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; jenkins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;启动Jenkins服务&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 启动Jenkins&lt;/span&gt;
+service jenkins start
+
+&lt;span class=&quot;c&quot;&gt;# 停止Jenkins&lt;/span&gt;
+service jenkins stop
+
+&lt;span class=&quot;c&quot;&gt;# 重启Jenkins&lt;/span&gt;
+service jenkins restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;注意事项&lt;/p&gt;
+
+    &lt;p&gt;Jenkins默认端口是8080，确保此端口不被占用或者修改Jenkins的默认端口，打开防火墙对该端口的拦截。&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 配置Jenkis的端口， 修改JENKINS_PORT=&quot;8080&quot;为目标端口&lt;/span&gt;
+vi /etc/sysconfig/jenkins
+
+&lt;span class=&quot;c&quot;&gt;# 开启防火墙端口&lt;/span&gt;
+firewall-cmd &lt;span class=&quot;nt&quot;&gt;--zone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;public &lt;span class=&quot;nt&quot;&gt;--add-port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8080/tcp &lt;span class=&quot;nt&quot;&gt;--permanent&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 重启Jenkins服务&lt;/span&gt;
+service jenkins restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;升级&quot;&gt;升级&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;下载官升升级war包，scp到目标服务器&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; ~/Downloads/jenkins.war user@ip:/usr/lib/jenkins/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看Jenkins服务启动的安装包位置&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 可以看到包的位置在/usr/lib/jenkins/jenkins.war&lt;/span&gt;
+ps &lt;span class=&quot;nt&quot;&gt;-ef&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;jenkins
+
+&lt;span class=&quot;c&quot;&gt;# 用升级war包替换旧的安装包，重启Jenkins服务&lt;/span&gt;
+service jenkins stop
+service jenkins start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="jenkins" /><category term="linuxÂ" /><category term="yum" /><summary type="html">本文介绍在centos操作系统下通过yum安装jenkins，并通过下载官方war包的方式升级。</summary></entry><entry><title type="html">Linux离线安装node</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/" rel="alternate" type="text/html" title="Linux离线安装node" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-node-install/">&lt;p&gt;本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。&lt;/p&gt;
 
 &lt;p&gt;1、 到&lt;a href=&quot;https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz&quot;&gt;官网&lt;/a&gt;下载安装包，并scp上传到目标服务器。&lt;/p&gt;
 
@@ -62,7 +137,7 @@ npm version
 &lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin/npm /usr/bin/npm
 
 &lt;span class=&quot;nb&quot;&gt;sudo ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/local/lib/nodejs/node-&lt;span class=&quot;nv&quot;&gt;$VERSION&lt;/span&gt;/bin/npx /usr/bin/npx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="node" /><category term="linux" /><summary type="html">本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。</summary></entry><entry><title type="html">Linux离线安装yarn和配置离线仓库</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/" rel="alternate" type="text/html" title="Linux离线安装yarn和配置离线仓库" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/">&lt;p&gt;yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="node" /><category term="linux" /><summary type="html">本文介绍如何在Linux 64位系统上通过二进制压缩文件离线安装安装node。</summary></entry><entry><title type="html">Linux离线安装yarn和配置离线仓库</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/" rel="alternate" type="text/html" title="Linux离线安装yarn和配置离线仓库" /><published>2019-01-03T00:00:00+08:00</published><updated>2019-01-03T00:00:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/linux-yarn-install-offline/">&lt;p&gt;yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。&lt;/p&gt;
 
 &lt;h2 id=&quot;优势&quot;&gt;优势&lt;/h2&gt;
 
@@ -171,7 +246,7 @@ Yarn可以高效地队列化请求并且避免请求瀑布化，使网络利用�
 &lt;ul&gt;
   &lt;li&gt;将“yarn-offline-mirror”配置添加到.yarnrc文件中&lt;/li&gt;
   &lt;li&gt;使用“yarn install”命令生成一个新的yarn.lock&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="linux" /><category term="yarn" /><summary type="html">yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。</summary></entry><entry><title type="html">CAS安装</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" rel="alternate" type="text/html" title="CAS安装" /><published>2018-12-30T00:00:00+08:00</published><updated>2018-12-30T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">&lt;p&gt;CAS安装是一个基本的面向源的过程，我们建议使用&lt;a href=&quot;http://maven.apache.org/plugins/maven-war-plugin/overlays.html&quot;&gt;WAR overlay&lt;/a&gt;项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像&lt;a href=&quot;http://tomcat.apache.org/whichversion.html&quot;&gt;Tomcat&lt;/a&gt;这样的Java servlet容器上。&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="linux" /><category term="yarn" /><summary type="html">yarn是Facebook团队开发的快速、可靠、安全的依赖管理工具。相比于npm包管理工具，yarn的离线模式更适用于在没有网络链接的情况下进行项目依赖安装及构建。</summary></entry><entry><title type="html">CAS安装</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/" rel="alternate" type="text/html" title="CAS安装" /><published>2018-12-30T00:00:00+08:00</published><updated>2018-12-30T00:00:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/cas-install/">&lt;p&gt;CAS安装是一个基本的面向源的过程，我们建议使用&lt;a href=&quot;http://maven.apache.org/plugins/maven-war-plugin/overlays.html&quot;&gt;WAR overlay&lt;/a&gt;项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像&lt;a href=&quot;http://tomcat.apache.org/whichversion.html&quot;&gt;Tomcat&lt;/a&gt;这样的Java servlet容器上。&lt;/p&gt;
 
 &lt;p&gt;WAR overlay项目提供参考和研究。&lt;/p&gt;
 
@@ -202,7 +277,7 @@ Yarn可以高效地队列化请求并且避免请求瀑布化，使网络利用�
   &lt;li&gt;
     &lt;p&gt;CAS服务器能够加载XML配置文件的模式以覆盖默认提供的内容。打算否决CAS默认行为的这些配置文件可以放在/ WEB-INF /中，并且必须使用以下模式命名：cas-servlet - * .xml。放在此文件中的Bean将覆盖其他文件。&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="CAS" /><category term="单点登录" /><category term="安装" /><summary type="html">CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。</summary></entry><entry><title type="html">基于Jekyll和GitHub Pages搭建个人博客</title><link href="https://chenqy9.github.io/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/" rel="alternate" type="text/html" title="基于Jekyll和GitHub Pages搭建个人博客" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages</id><content type="html" xml:base="https://chenqy9.github.io/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/">&lt;h2 id=&quot;本文介绍如何利用jekyll创建一个静态站点并托管到github-pages上&quot;&gt;本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="CAS" /><category term="单点登录" /><category term="安装" /><summary type="html">CAS安装是一个基本的面向源的过程，我们建议使用WAR overlay项目来组织自定义，例如组件配置和UI设计。 WAR覆盖构建的输出是一个cas.war文件，可以部署在像Tomcat这样的Java servlet容器上。</summary></entry><entry><title type="html">基于Jekyll和GitHub Pages搭建个人博客</title><link href="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/" rel="alternate" type="text/html" title="基于Jekyll和GitHub Pages搭建个人博客" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages</id><content type="html" xml:base="http://localhost:4000/%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/build-blog-with-jekyll-and-github-pages/">&lt;h2 id=&quot;本文介绍如何利用jekyll创建一个静态站点并托管到github-pages上&quot;&gt;本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。&lt;/h2&gt;
 
 &lt;h2 id=&quot;jekyll&quot;&gt;JeKyll&lt;/h2&gt;
 
@@ -313,7 +388,7 @@ git push &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; origin master
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; myblog/&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; username.github.io
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;后面直接修改仓库文件，用Jekyll编译提交即可。&lt;/p&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="博客" /><category term="Jekyll" /><category term="GitHub Pages" /><category term="markdown" /><summary type="html">本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。</summary></entry><entry><title type="html">CAS入门</title><link href="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/" rel="alternate" type="text/html" title="CAS入门" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas</id><content type="html" xml:base="https://chenqy9.github.io/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/">&lt;p&gt;企业单点登录 - CAS提供友好的开源社区，积极支持并为项目做出贡献。虽然该项目植根于高级开放源代码，但它已发展成为跨越财富500强企业和小型专用设备的国际受众。&lt;/p&gt;
+&lt;p&gt;后面直接修改仓库文件，用Jekyll编译提交即可。&lt;/p&gt;</content><author><name>chenqy9</name><email>chenqy9@foxmail.com</email></author><category term="博客" /><category term="Jekyll" /><category term="GitHub Pages" /><category term="markdown" /><summary type="html">本文介绍如何利用Jekyll创建一个静态站点，并托管到GitHub Pages上。</summary></entry><entry><title type="html">CAS入门</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/" rel="alternate" type="text/html" title="CAS入门" /><published>2018-12-29T00:00:00+08:00</published><updated>2018-12-29T00:00:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/learn-about-cas/">&lt;p&gt;企业单点登录 - CAS提供友好的开源社区，积极支持并为项目做出贡献。虽然该项目植根于高级开放源代码，但它已发展成为跨越财富500强企业和小型专用设备的国际受众。&lt;/p&gt;
 
 &lt;p&gt;CAS为Web提供企业单点登录服务：&lt;/p&gt;
 
