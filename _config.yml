@@ -80,3 +80,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/chenqy9/chenqy9.github.io.git
+  branch: master
