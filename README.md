@@ -3,6 +3,9 @@
 ## 命令
 
 ``` bash
+# 开发
+yarn dev
+
 # 部署
-hexo deploy
+yarn deploy
 ```

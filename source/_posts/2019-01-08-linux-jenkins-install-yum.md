@@ -10,7 +10,7 @@ categories:
 - 文章教程
 tags:
 - jenkins
-- linuxÂ
+- linux
 - yum
 ---
 
