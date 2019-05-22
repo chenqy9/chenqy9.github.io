@@ -3,19 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 小王子的博客
-subtitle:
-description: 全栈，前端，后台，Linux
-keywords:
+title: GitHub搬运工
+subtitle: 道虽迩，不行不至；<br>事虽小，不为不成。
+description: 全栈，前端，后台，JavaScript，java，css3，html5，Linux
+keywords: 全栈，前端，后台，JavaScript，java，css3，html5，Linux
 author: chenqy9
-language:
-  - zh-CN
-  - en
-timezone:
+language: zh-CN
+timezone: Asia/ShangHai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://chenqy9.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -75,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

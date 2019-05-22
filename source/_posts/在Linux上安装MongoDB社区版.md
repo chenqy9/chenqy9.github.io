@@ -1,12 +1,19 @@
+---
 title: 在Linux上安装MongoDB社区版
-author: chenqy9
-tags:
-  - 'linux '
-  - MongoDB
+layout: single
+author_profile: true
+read_time: false
+comments: null
+related: true
+classes: wide
 categories:
-  - 文章教程
+- 文章教程
+tags:
+  - linux
+  - MongoDB
 date: 2019-02-15 14:11:00
 ---
+
 ## 在Red Hat Enterprise或CentOS Linux上安装MongoDB 社区版
 
 本教程使用.rpm软件包在Red Hat Enterprise Linux或CentOS Linux版本6和7上安装MongoDB Community Edition。
