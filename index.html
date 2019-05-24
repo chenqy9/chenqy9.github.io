@@ -328,6 +328,227 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chenqy9.github.io/2019/05/24/responsive-web-design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenqy9">
+      <meta itemprop="description" content="全栈，前端，后台，JavaScript，java，css3，html5，Linux">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GitHub搬运工">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/24/responsive-web-design/" class="post-title-link" itemprop="url">响应式网页设计</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-24 11:22:40 / 修改时间：14:57:07" itemprop="dateCreated datePublished" datetime="2019-05-24T11:22:40+08:00">2019-05-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/文章教程/" itemprop="url" rel="index"><span itemprop="name">文章教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p><strong>什么是响应式网页设计？</strong></p>
+<ul>
+<li>响应式网页设计使您的网页在所有设备上都很好看。</li>
+<li>响应式网页设计仅使用HTML和CSS。</li>
+<li>响应式网页设计不是程序或JavaScript。</li>
+</ul>
+<p><strong>为所有用户设计最佳体验</strong><br>可以使用许多不同的设备查看网页：台式机，平板电脑和手机。无论设备如何，您的网页都应该看起来不错，并且易于使用。<br>网页不应该遗漏信息以适应较小的设备，而是调整其内容以适应任何设备：<br><img src="/images/responsive-web-design/rwd_desktop.png" alt="桌面" title="桌面"><br>桌面<br><img src="/images/responsive-web-design/rwd_tablet.png" alt="平板" title="平板"><br>平板<br><img src="/images/responsive-web-design/rwd_phone.png" alt="手机" title="手机"><br>手机  </p>
+<p>当您使用CSS和HTML调整大小，隐藏，缩小，放大或移动内容以使其在任何屏幕上看起来都很好时，它被称为响应式网页设计。</p>
+<h2 id="二、视窗"><a href="#二、视窗" class="headerlink" title="二、视窗"></a>二、视窗</h2><p><strong>什么是视窗？</strong><br>视窗是用户在网页上的可见区域。 视窗因设备而异，并且在手机上比在计算机屏幕上小。 在平板电脑和移动电话之前，网页仅针对计算机屏幕设计，并且网页通常具有静态设计和固定大小。 然后，当我们开始使用平板电脑和手机上网时，固定大小的网页太大而无法适应视窗。为了解决这个问题，这些设备上的浏览器按比例缩小整个网页以适应屏幕。 这不完美!!只是快速修复。</p>
+<p><strong>设置视窗</strong><br>HTML5引入了一种方法，让网页设计师通过<code>&lt;meta&gt;</code>标签控制视窗。 您应该在所有网页中包含以下<code>&lt;meta&gt;</code>viewport元素：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>viewport元素为浏览器提供有关如何控制页面尺寸和缩放的说明。 width = device-width部分将页面宽度设置为遵循设备的屏幕宽度（具体取决于设备）。 initial-scale = 1.0部分设置浏览器首次加载页面时的初始缩放级别。 以下是没有视窗元标记的网页示例，以及具有视窗元标记的同一网页：<br><img src="/images/responsive-web-design/img_viewport1.png" alt="没有视窗元标记" title="没有视窗元标记"><br>没有视窗元标记<br><img src="/images/responsive-web-design/img_viewport2.png" alt="有视窗元标记" title="有视窗元标记"><br>有视窗元标记  </p>
+<p><strong>视窗大小内容</strong></p>
+<p>用户用于在桌面和移动设备上垂直滚动网站 - 但不是水平滚动！ 因此，如果用户被迫水平滚动或缩小，以查看整个网页，则会导致糟糕的用户体验。 一些额外的规则要遵循：</p>
+<ul>
+<li>不要使用大的固定宽度元素 - 例如，如果图像的宽度比视窗宽，则可能导致视口水平滚动。请记住调整此内容以适合视窗的宽度。</li>
+<li>不要让内容依赖于特定的视口宽度来渲染 - 由于CSS像素中的屏幕尺寸和宽度在不同设备之间变化很大，因此内容不应依赖于特定的视口宽度来渲染。</li>
+<li>使用CSS媒体查询为小屏幕和大屏幕应用不同的样式 - 为页面元素设置大的绝对CSS宽度将导致元素对于较小设备上的视口而言太宽。相反，请考虑使用相对宽度值，例如宽度：100％。另外，请注意使用大的绝对定位值。它可能导致元素落在小型设备上的视口之外。</li>
+</ul>
+<h2 id="三、网格视图"><a href="#三、网格视图" class="headerlink" title="三、网格视图"></a>三、网格视图</h2><p><strong>什么是网格视图？</strong></p>
+<p>许多网页都基于网格视图，这意味着页面分为以下几列：<br><img src="/images/responsive-web-design/1558680048889.jpg" alt="网格视图" title="网格视图"><br>在设计网页时，使用网格视图非常有用。它可以更轻松地在页面上放置元素。<br><img src="/images/responsive-web-design/1558680067487.jpg" alt="网格视图" title="网格视图"><br>响应式网格视图通常有12列，总宽度为100％，并在调整浏览器窗口大小时缩小和展开。</p>
+<p><strong>构建响应式网格视图</strong><br>让我们开始构建响应式网格视图。 首先确保所有HTML元素都将box-sizing属性设置为border-box。这可确保填充和边框包含在元素的总宽度和高度中。<br>在CSS中添加以下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以下示例显示了一个简单的响应式网页，其中包含两列：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.menu</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">75%</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果网页只包含两列，则上面的示例很好。 但是，我们希望使用具有12列的响应式网格视图，以便更好地控制网页。 首先，我们必须计算一列的百分比：100％/ 12列= 8.33％。</p>
+<p>然后我们为12列中的每一列创建一个类，<code>class =“col-”</code>和一个定义该段应该跨越多少列的数字：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.col-1</span> &#123;<span class="attribute">width</span>: <span class="number">8.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-2</span> &#123;<span class="attribute">width</span>: <span class="number">16.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-3</span> &#123;<span class="attribute">width</span>: <span class="number">25%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-4</span> &#123;<span class="attribute">width</span>: <span class="number">33.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-5</span> &#123;<span class="attribute">width</span>: <span class="number">41.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-6</span> &#123;<span class="attribute">width</span>: <span class="number">50%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-7</span> &#123;<span class="attribute">width</span>: <span class="number">58.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-8</span> &#123;<span class="attribute">width</span>: <span class="number">66.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-9</span> &#123;<span class="attribute">width</span>: <span class="number">75%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-10</span> &#123;<span class="attribute">width</span>: <span class="number">83.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-11</span> &#123;<span class="attribute">width</span>: <span class="number">91.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-12</span> &#123;<span class="attribute">width</span>: <span class="number">100%</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>所有这些列应该浮动到左侧，并且填充为15px：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[class*="col-"]</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每行应包含在<code>&lt;div&gt;</code>中。行内的列数应始终加起来为12：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-3"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-9"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>行内的列全部浮动到左侧，因此从页面流中取出，其他元素将被放置，就好像列不存在一样。为了防止这种情况，我们将添加一个清除流程的样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.row</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们还想添加一些样式和颜色以使其看起来更好：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">html &#123;</span><br><span class="line">    font-family: "Lucida Sans", sans-serif;</span><br><span class="line">&#125;</span><br><span class="line">.header &#123;</span><br><span class="line">    background-color: #9933cc;</span><br><span class="line">    color: #ffffff;</span><br><span class="line">    padding: 15px;</span><br><span class="line">&#125;</span><br><span class="line">.menu ul &#123;</span><br><span class="line">    list-style-type: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.menu li &#123;</span><br><span class="line">    padding: 8px;</span><br><span class="line">    margin-bottom: 7px;</span><br><span class="line">    background-color :#33b5e5;</span><br><span class="line">    color: #ffffff;</span><br><span class="line">    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);</span><br><span class="line">&#125;</span><br><span class="line">.menu li:hover &#123;</span><br><span class="line">    background-color: #0099cc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请注意，当您将浏览器窗口调整为非常小的宽度时，示例中的网页看起来不太好。在下一章中，您将学习如何解决这个问题。</p>
+<p>** 四、媒体查询</p>
+<p><strong>什么是媒体查询？</strong></p>
+<p>媒体查询是CSS3中引入的CSS技术。 仅当某个条件为真时，它才使用@media规则包含一个CSS属性块。<br>如果浏览器窗口小于500px，背景颜色将变为浅蓝色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> only screen and (max-width: <span class="number">500px</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>添加断点</strong><br>在本教程的前面，我们创建了一个包含行和列的网页，它具有响应性，但在小屏幕上看起来不太好。<br>媒体查询可以提供帮助。我们可以添加一个断点，其中设计的某些部分在断点的每一侧都会表现不同。<br><img src="/images/responsive-web-design/rwd_desktop.png" alt="桌面" title="桌面"><br>桌面<br><img src="/images/responsive-web-design/rwd_phone.png" alt="手机" title="手机"><br>手机<br>使用媒体查询在768px处添加断点：<br>当屏幕（浏览器窗口）小于768px时，每列的宽度应为100％：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* For desktop: */</span></span><br><span class="line"><span class="selector-class">.col-1</span> &#123;<span class="attribute">width</span>: <span class="number">8.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-2</span> &#123;<span class="attribute">width</span>: <span class="number">16.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-3</span> &#123;<span class="attribute">width</span>: <span class="number">25%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-4</span> &#123;<span class="attribute">width</span>: <span class="number">33.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-5</span> &#123;<span class="attribute">width</span>: <span class="number">41.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-6</span> &#123;<span class="attribute">width</span>: <span class="number">50%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-7</span> &#123;<span class="attribute">width</span>: <span class="number">58.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-8</span> &#123;<span class="attribute">width</span>: <span class="number">66.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-9</span> &#123;<span class="attribute">width</span>: <span class="number">75%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-10</span> &#123;<span class="attribute">width</span>: <span class="number">83.33%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-11</span> &#123;<span class="attribute">width</span>: <span class="number">91.66%</span>;&#125;</span><br><span class="line"><span class="selector-class">.col-12</span> &#123;<span class="attribute">width</span>: <span class="number">100%</span>;&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> only screen and (max-width: <span class="number">768px</span>) &#123;</span><br><span class="line">    <span class="comment">/* For mobile phones: */</span></span><br><span class="line">    <span class="selector-attr">[class*="col-"]</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>始终为移动优先设计</strong><br>移动优先意味着在为桌面设备或任何其他设备进行设计之前设计移动设备（这将使页面在较小的设备上显示得更快）。 这意味着我们必须在CSS中进行一些更改。 当宽度小于768px时，我们应该在宽度大于768px时更改设计，而不是更改样式。这将使我们的设计移动优先：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* For mobile phones: */</span></span><br><span class="line"><span class="selector-attr">[class*="col-"]</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">768px</span>) &#123;</span><br><span class="line">    <span class="comment">/* For desktop: */</span></span><br><span class="line">    <span class="selector-class">.col-1</span> &#123;<span class="attribute">width</span>: <span class="number">8.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-2</span> &#123;<span class="attribute">width</span>: <span class="number">16.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-3</span> &#123;<span class="attribute">width</span>: <span class="number">25%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-4</span> &#123;<span class="attribute">width</span>: <span class="number">33.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-5</span> &#123;<span class="attribute">width</span>: <span class="number">41.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-6</span> &#123;<span class="attribute">width</span>: <span class="number">50%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-7</span> &#123;<span class="attribute">width</span>: <span class="number">58.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-8</span> &#123;<span class="attribute">width</span>: <span class="number">66.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-9</span> &#123;<span class="attribute">width</span>: <span class="number">75%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-10</span> &#123;<span class="attribute">width</span>: <span class="number">83.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-11</span> &#123;<span class="attribute">width</span>: <span class="number">91.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-12</span> &#123;<span class="attribute">width</span>: <span class="number">100%</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>另一个断点</strong></p>
+<p>您可以根据需要添加任意数量的断点。 我们还将在平板电脑和手机之间插入一个断点。<br><img src="/images/responsive-web-design/rwd_desktop.png" alt="桌面" title="桌面"><br>桌面<br><img src="/images/responsive-web-design/rwd_tablet.png" alt="平板" title="平板"><br>平板<br><img src="/images/responsive-web-design/rwd_phone.png" alt="手机" title="手机"><br>手机<br>我们通过添加一个媒体查询（600px）和一组大于600px（但小于768px）的设备的新类来完成此操作：<br>请注意，这两组类几乎相同，唯一的区别是名称（<code>col-</code>和<code>col-m-</code>）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* For mobile phones: */</span></span><br><span class="line"><span class="selector-attr">[class*="col-"]</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">600px</span>) &#123;</span><br><span class="line">    <span class="comment">/* For tablets: */</span></span><br><span class="line">    <span class="selector-class">.col-m-1</span> &#123;<span class="attribute">width</span>: <span class="number">8.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-2</span> &#123;<span class="attribute">width</span>: <span class="number">16.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-3</span> &#123;<span class="attribute">width</span>: <span class="number">25%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-4</span> &#123;<span class="attribute">width</span>: <span class="number">33.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-5</span> &#123;<span class="attribute">width</span>: <span class="number">41.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-6</span> &#123;<span class="attribute">width</span>: <span class="number">50%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-7</span> &#123;<span class="attribute">width</span>: <span class="number">58.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-8</span> &#123;<span class="attribute">width</span>: <span class="number">66.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-9</span> &#123;<span class="attribute">width</span>: <span class="number">75%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-10</span> &#123;<span class="attribute">width</span>: <span class="number">83.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-11</span> &#123;<span class="attribute">width</span>: <span class="number">91.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-m-12</span> &#123;<span class="attribute">width</span>: <span class="number">100%</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">768px</span>) &#123;</span><br><span class="line">    <span class="comment">/* For desktop: */</span></span><br><span class="line">    <span class="selector-class">.col-1</span> &#123;<span class="attribute">width</span>: <span class="number">8.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-2</span> &#123;<span class="attribute">width</span>: <span class="number">16.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-3</span> &#123;<span class="attribute">width</span>: <span class="number">25%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-4</span> &#123;<span class="attribute">width</span>: <span class="number">33.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-5</span> &#123;<span class="attribute">width</span>: <span class="number">41.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-6</span> &#123;<span class="attribute">width</span>: <span class="number">50%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-7</span> &#123;<span class="attribute">width</span>: <span class="number">58.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-8</span> &#123;<span class="attribute">width</span>: <span class="number">66.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-9</span> &#123;<span class="attribute">width</span>: <span class="number">75%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-10</span> &#123;<span class="attribute">width</span>: <span class="number">83.33%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-11</span> &#123;<span class="attribute">width</span>: <span class="number">91.66%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.col-12</span> &#123;<span class="attribute">width</span>: <span class="number">100%</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们有两组完全相同的类似乎很奇怪，但它给了我们HTML的机会，决定每个断点处的列会发生什么：<br>对于桌面： 第一部分和第三部分将分别跨越3列。中间部分将跨越6列。 对于平板电脑 第一部分将跨越3列，第二部分将跨越9列，第三部分将显示在前两部分下方，它将跨越12列：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-3 col-m-3"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6 col-m-9"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-3 col-m-12"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>方向：纵向/横向</strong></p>
+<p>媒体查询还可用于根据浏览器的方向更改页面的布局。 您可以拥有一组仅在浏览器窗口宽度超过其高度时应用的CSS属性，即所谓的“横向”方向：<br>如果方向处于横向模式，则网页将具有浅蓝色背景：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> only screen and (orientation: landscape) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: lightblue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h2><p>不同设备的不同图像<br>大型图像在大型计算机屏幕上可以是完美的，但在小型设备上却无用。为什么在必须缩小尺寸时加载大图像？要减少负载或出于任何其他原因，您可以使用媒体查询在不同设备上显示不同的图像。 这是一个大图像和一个较小的图像，将显示在不同的设备上：<br><img src="/images/responsive-web-design/img_flowers.jpg" alt="花" title="花"><br><img src="/images/responsive-web-design/img_smallflower.jpg" alt="花" title="花">  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* For width smaller than 400px: */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'img_smallflower.jpg'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* For width 400px and larger: */</span></span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">400px</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'img_flowers.jpg'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>您可以使用媒体查询min-device-width而不是min-width来检查设备宽度，而不是浏览器宽度。然后，在调整浏览器窗口大小时图像不会更改：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* For devices smaller than 400px: */</span><br><span class="line">body &#123;</span><br><span class="line">    background-image: url('img_smallflower.jpg');</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* For devices 400px and larger: */</span><br><span class="line">@media only screen and (min-device-width: 400px) &#123;</span><br><span class="line">    body &#123; </span><br><span class="line">        background-image: url('img_flowers.jpg');</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>HTML5<code>&lt;picture&gt;</code>元素</strong></p>
+<p>HTML5引入了<code>&lt;picture&gt;</code>元素，可以让您定义多个图像。<br>浏览器支持<br><img src="/images/responsive-web-design/1558680133741.jpg" alt="浏览器支持" title="浏览器支持"><br><code>&lt;picture&gt;</code>元素的工作方式类似于<code>&lt;video&gt;</code>和<code>&lt;audio&gt;</code>元素。您设置了不同的源，第一个符合首选项的源是正在使用的源：  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">picture</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">srcset</span>=<span class="string">"img_smallflower.jpg"</span> <span class="attr">media</span>=<span class="string">"(max-width: 400px)"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">srcset</span>=<span class="string">"img_flowers.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img_flowers.jpg"</span> <span class="attr">alt</span>=<span class="string">"Flowers"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">picture</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>srcset</code>属性是必需的，它定义了图像的来源。 <code>media</code>属性是可选的，并接受您在CSS <code>@media</code>规则中找到的媒体查询。 您还应该为不支持<code>&lt;picture&gt;</code>元素的浏览器定义<code>&lt;img&gt;</code>元素。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chenqy9.github.io/2019/02/15/在Linux上安装MongoDB社区版/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1960,7 +2181,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2026,7 +2247,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
