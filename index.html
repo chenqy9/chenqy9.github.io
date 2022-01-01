@@ -68,7 +68,6 @@
 
     <script>
     (function(){
-        console.log(base64);
         $('#husband-name').bind('change', function(event) {
             var husbandName = event.target.value;
             if (base64.encode(encodeURIComponent(husbandName)) === 'JUU5JTk5JTg4JUU1JUJBJTg2JUU4JTgwJTgw') {
@@ -136,6 +135,7 @@
         canvas.click(function(e) {
             $('#envelope').hide();
             var audio = new Audio('./Love_files/54168502.mp3');
+            audio.loop = true;
             audio.play();
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
