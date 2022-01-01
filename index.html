@@ -4,17 +4,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>庆耀爱小川</title>
         <link rel="icon" type="image/x-icon" href="./favicon.ico">
-        <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
-        <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-parser.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-jit.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-builderbase.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-async.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-async-powerpack.min.js"></script>
-        <script type="text/javascript" src="./Love_files/functions.js" charset="utf-8"></script>
-        <script type="text/javascript" src="./Love_files/base64.js" charset="utf-8"></script>
-        <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
+        <link type="text/css" rel="stylesheet" href="./love_files/default.css">
+        <script type="text/javascript" src="./love_files/jquery.min.js"></script>
+        <script type="text/javascript" src="./love_files/jscex.min.js"></script>
+        <script type="text/javascript" src="./love_files/jscex-parser.js"></script>
+        <script type="text/javascript" src="./love_files/jscex-jit.js"></script>
+        <script type="text/javascript" src="./love_files/jscex-builderbase.min.js"></script>
+        <script type="text/javascript" src="./love_files/jscex-async.min.js"></script>
+        <script type="text/javascript" src="./love_files/jscex-async-powerpack.min.js"></script>
+        <script type="text/javascript" src="./love_files/functions.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./love_files/base64.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./love_files/love.js" charset="utf-8"></script>
     </head>
     <body>
         <div id="password">
@@ -38,12 +38,12 @@
                         <span class="say">我会每一天带着笑脸，和你说早安，</span><br>
                         <span class="say">我会每一晚与你道声晚安再入梦乡，</span><br>
                         <span class="say">我会带你去所有你想去的地方，</span><br>
-                        <span class="say">陪你闹看你笑</span><br>
+                        <span class="say">陪你闹看你笑，</span><br>
                         <span class="say">历经你往后生命中所有的点点滴滴。</span><br>
                         <span class="say">我期待这一生与你一起走过，</span><br>
-                        <span class="say">我期待与你慢慢变老</span><br>
+                        <span class="say">我期待与你慢慢变老，</span><br>
                         <span class="say">等我们老到哪儿也去不了，</span><br>
-                        <span class="say">还能满载着一生的幸福快乐 ！</span><br>
+                        <span class="say">还能满载着一生的幸福快乐！</span><br>
                         <br>
                         <span class="say">我会为我们的未来撑起一片天空，</span><br>
                         <span class="say">为我们的将来担负起一生的责任，</span><br>
@@ -60,6 +60,7 @@
                     <div id="clock"></div>
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
+                <audio id="music" src="./love_files/54168502.mp3" loop></audio>
             </div>
         </div>
     
@@ -133,15 +134,13 @@
         var hold = 1;
 
         canvas.click(function(e) {
-            $('#envelope').hide();
-            var audio = new Audio('./Love_files/54168502.mp3');
-            audio.loop = true;
-            audio.play();
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
             if (seed.hover(x, y)) {
-                hold = 0; 
+                $('#envelope').hide();
+                $('#music')[0].play();
+                hold = 0;
                 canvas.unbind("click");
                 canvas.unbind("mousemove");
                 canvas.removeClass('hand');
