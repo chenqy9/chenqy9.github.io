@@ -190,7 +190,7 @@ export default class SdQuestion extends Vue {
       a: 'B',
     },
     {
-      q: '以下那家企业总部不在顺德？',
+      q: '以下哪家企业总部不在顺德？',
       c: [
         {
           value: 'A',
