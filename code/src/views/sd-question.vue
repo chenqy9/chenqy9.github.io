@@ -1,7 +1,7 @@
 <template>
   <div class="sd-question">
     <!-- <div class="bg-header"></div> -->
-    <img class="bg-header" src="~@/assets/img/bg-answer-cover.jpeg">
+    <img class="bg-header" src="~@/assets/img/bg-answer-cover.png">
     <div v-show="!isStart && !isAllRight" class="cover">
       <div class="title">
         <p>“顺德承办CBA赛事”</p>
