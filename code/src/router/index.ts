@@ -6,6 +6,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'SdCba',
     component: () => import(/* webpackChunkName: "SdCba" */ '@/views/sd-cba.vue'),
   },
+  {
+    path: '/question',
+    name: 'SdQuestion',
+    component: () => import(/* webpackChunkName: "SdAnswer" */ '@/views/sd-question.vue'),
+  },
 ];
 
 const router = createRouter({
