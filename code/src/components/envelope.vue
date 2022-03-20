@@ -34,6 +34,8 @@ export default class Envelope extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@use "sass:math";
+
 .envelope {
   position: relative;
   height: 100%;
@@ -73,8 +75,8 @@ export default class Envelope extends Vue {
     top: 100%;
     width: $seal-width;
     height: $seal-height;
-    margin-left: -$seal-width / 2;
-    margin-top: -$seal-height / 2;
+    margin-left: math.div(-$seal-width, 2);
+    margin-top: math.div(-$seal-height, 2);
     background: url('~@/assets/img/icon-basketball.png') center center/100% 100% no-repeat;
 
     &--closed {
