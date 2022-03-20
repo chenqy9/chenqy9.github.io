@@ -14,7 +14,15 @@
     <div v-if="isEnvelopeOpened" class="letter-wrapper">
       <letter ref="letter" />
     </div>
-    <div v-show="isEnvelopeOpened" class="music-player" @click="toggleMusic"></div>
+    <div
+      v-show="isEnvelopeOpened"
+      :class="{
+        'music-player': true,
+        'music-player--play': isPlayMusic,
+      }"
+      @click="toggleMusic"
+    >
+    </div>
     <audio ref="audio" style="display:none" src="audio/bgm_qsws.mov" preload="auto" loop />
   </div>
 </template>
@@ -102,7 +110,10 @@ export default class SdCba extends Vue {
     height: 30px;
     width: 30px;
     background: url('~@/assets/img/icon-music-player.png') center center/ 100% 100% no-repeat;
-    animation: spin 4s linear infinite;
+
+    &--play {
+      animation: spin 4s linear infinite;
+    }
   }
 }
 </style>
