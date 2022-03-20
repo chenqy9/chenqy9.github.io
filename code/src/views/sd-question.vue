@@ -328,7 +328,7 @@ export default class SdQuestion extends Vue {
   }
 
   .start-btn, .btn-next {
-    margin-top: 20px;
+    // margin-top: 20px;
     background-color: #3bb3e0;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
@@ -375,7 +375,7 @@ export default class SdQuestion extends Vue {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     height: 100%;
     width: 100%;
     line-height: 1.5em;
