@@ -369,6 +369,7 @@ export default class SdQuestion extends Vue {
 
   .exam {
     position: absolute;
+    z-index: 999;
     padding: 20px;
     top: 0;
     left: 0;
@@ -414,6 +415,8 @@ export default class SdQuestion extends Vue {
   }
 
   .result {
+    position: relative;
+    z-index: 999;
     height: 100%;
     display: flex;
     flex-direction: column;
