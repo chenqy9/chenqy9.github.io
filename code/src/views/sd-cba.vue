@@ -23,7 +23,7 @@
       @click="toggleMusic"
     >
     </div>
-    <audio ref="audio" style="display:none" src="audio/bgm_qsws.mov" preload="auto" loop />
+    <audio ref="audio" style="display:none" src="audio/bgm_qsws.mp3" preload="auto" loop />
   </div>
 </template>
 
