@@ -4,8 +4,8 @@
 
 # Site
 title: 小王子星球
-subtitle: '道虽迩，不行不至；<br>事虽小，不为不成。'
-description: '全栈，前端，后台，JavaScript，java，css3，html5，Linux，数据库'
+subtitle: '道虽迩，不行不至，<br>事虽小，不为不成。'
+description: '一只热爱生活的程序猿'
 keywords: '全栈，前端，后台，JavaScript，java，css3，html5，Linux，数据库'
 author: 小王子
 language: zh-CN
@@ -98,6 +98,12 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
