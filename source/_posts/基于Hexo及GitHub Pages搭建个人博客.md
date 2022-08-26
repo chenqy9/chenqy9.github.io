@@ -1,3 +1,214 @@
+---
+title: 基于Hexo及GitHub Pages搭建个人博客
+date: 2022-08-26
+categories:
+  - 教程文章
+tags:
+  - 博客
+  - Hexo
+  - GitHub Pages
+  - Next
+---
+
+## Hexo
+
+[Hexo](https://hexo.io/zh-cn/) 是一个基于JavaScript，快速、简洁且高效的开源博客框架，具有以下特点：
+
+- **超快速度**
+  Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。
+- **支持 Markdown**
+  Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。
+- **一键部署**
+  只需一条指令即可部署到 GitHub Pages, Heroku 或其他平台。
+- **插件和可扩展性**
+  强大的 API 带来无限的可能，与数种模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less/Sass）轻易集成
+
+## Hexo vs Jekyll vs Hugo
+
+[Hexo](https://hexo.io/zh-cn/)是基于JavaScript开发的开源博客框架，GitHub Stars 35.3K(截止2022-08-25)。
+[Jekyll](https://github.com/jekyll/jekyll)是基于ruby开发的开源博客框架，GitHub Stars 45.2K(截止2022-08-25)。
+[Hugo](https://github.com/gohugoio/hugo)是基于Go开发的开源博客框架，GitHub Stars 61.4K(截止2022-08-25)。
+
+我选择Hexo的原因：
+
+- 我是web前端开发工程师，对自己熟悉的JavaScript有好感
+- Hexo的开发者是中国台湾人，资源和文档对中文支持好
+- 配置上手简单
+
+## 初始化博客
+
+安装前提：
+
+- [Node.js](https://nodejs.org/en/) (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)
+- [Git](https://git-scm.com/)
+
+``` bash
+# 1. 安装 Hexo
+npm install -g hexo-cli
+
+# 2. 初始化项目
+hexo init hexo-demo
+
+# 3. 安装依赖
+cd hexo-demo
+npm i
+```
+
+## 配置博客
+
+打开hexo的配置文件`_config.yml`，具体配置可参考[官方文档](https://hexo.io/docs/configuration.html)，下面是我的配置，给大家参考一下
+
+<details>
+  <summary>参考配置</summary>
+
+``` yml
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 小王子星球
+subtitle: '道虽迩，不行不至，<br>事虽小，不为不成。'
+description: '一只热爱生活的程序猿'
+keywords: '全栈，前端，后台，JavaScript，java，css3，html5，Linux，数据库'
+author: 小王子
+language: zh-CN
+timezone: Asia/ShangHai
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://chenqy9.github.io/
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+search:
+  path: search.xml
+  field: post
+  content: false
+  format: html
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo: https://github.com/chenqy9/chenqy9.github.io.git
+  branch: master
+```
+
+</details>
+
+## 安装并配置NexT主题
+
+Hexo的默认主题是landscape，其官方网站也提供了很多其他[主题](https://hexo.io/themes/)。我个人喜欢
+[NexT](https://github.com/next-theme/hexo-theme-next)主题，下面展示一下主题的安装和配置。
+
+``` bash
+# 1. 通过npm安装主题
+cd hexo-demo # 进入你的博客项目根目录
+npm install hexo-theme-next # 安装主题
+
+# 2. 修改_config.yml的主题配置项为next
+# theme: next
+
+# 3. 通过npm更新主题
+npm install hexo-theme-next@latest
+```
+
+主题的配置文件为根目录的`_config.next.yml`，可以从`node_modules`拷贝一份官方默认配置到博客根目录，具体操作如下：
+
+``` bash
+# 复制默认配置到博客根目录
+cp node_modules/hexo-theme-next/_config.yml _config.next.yml
+```
+
+具体的配置项可参考[官方文档](https://theme-next.js.org/docs/theme-settings/)，下面是我的配置给大家参考一下：
+
+<details>
+	<summary>参考配置</summary>
+
+``` yml
 # ===============================================================
 # It's recommended to use Alternate Theme Config to configure NexT
 # Modifying this file may result in merge conflict
@@ -898,3 +1109,120 @@ vendors:
 css: css
 js: js
 images: images
+
+```
+
+</details>
+
+## 撰写第一篇博客
+
+配置好我们的博客之后，就可以开始基于markdown写博客文章啦，具体操作如下：  
+
+``` bash
+# 通过hexo命令创建博文
+hexo new post hello-world
+```
+
+其创建的文件如下：
+
+``` markdown
+---
+title: hello-world
+date: 2022-08-26 18:16:52
+tags:
+---
+
+```
+
+头部是博文的信息，可以添加分类和标签，如：
+
+``` markdown
+---
+title: hello-world
+date: 2022-08-26 18:16:52
+categories
+ - 测试
+tags:
+ - helloworld
+---
+这里是正文
+```
+
+## 发布博客到Github Pages
+
+完成以上配置，写好我们的博文，接下来就是发布托管到GitHub Pages啦～
+
+### 创建仓库
+
+1. 创建一个仓库  
+   前往[GitHUb](https://github.com/)创建一个新的仓库，仓库名称为**username.github.io**，其中 **username**是你的 GitHub 用户名或者组织名称。
+
+2. 克隆仓库  
+   把步骤一创建的仓库克隆到本地。
+
+   ```bash
+   git clone https://github.com/username/username.github.io
+   ```
+
+3. 创建第一个页面  
+   进入项目目录，新建一个 index.html 的文件。
+
+   ```bash
+   cd username.github.io
+   echo "Hello World" > index.html
+   ```
+
+4. 推送到远程仓库  
+   增加、提交和推送你的更改
+
+   ```bash
+   git add --all
+   git commit -m "初始提交"
+   git push -u origin master
+   ```
+
+5. 你已经成功完成  
+   访问[https://username.github.io_](https://username.github.io)查看效果
+
+### 部署博客
+
+1. 首先从上面的仓库中创建一个新的分支，用来写博客：
+
+``` bash
+# username.github.io根目录
+git checkout -b blog
+```
+
+2. 将我们上面创建的博客项目复制到仓库
+
+``` bash
+cp -r hexo-demo/** username.github.io
+```
+
+3. 修改博客配置文件中的部署配置
+
+``` yml
+# _config.yml配置文件
+deploy:
+  type: git
+  repo: https://github.com/username/username.github.io.git
+  branch: master
+```
+
+4. 提交变更并发布
+
+``` bash
+# 提交blog分支的变更
+git add .
+git commit -m "更新博客"
+git push --set-upstream origin blog
+
+# 执行部署
+npm run deploy
+```
+
+完成上面的操作之后，我们就可以在https://username.github.io看到我们的博客啦～
+
+## 增加本地搜索功能
+
+TODO

@@ -1,3 +1,15 @@
-const { execSync } = require('child_process');
+const { spawn } = require('child_process');
 
-console.log(execSync('npm run server').toString());
+const hexoServer = spawn('npm', ['run', 'server']);
+
+hexoServer.stdout.on('data', function (data) {
+  console.log(data.toString());
+});
+
+hexoServer.stderr.on('data', function (data) {
+  console.log(data.toString());
+});
+
+hexoServer.on('exit', function (code) {
+  console.log(code.toString());
+});

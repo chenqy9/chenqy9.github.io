@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "new:post": "hexo new post",
     "dev": "pm2 start ecosystem.config.js && pm2 logs",
     "dev:stop": "pm2 delete ecosystem.config.js",
     "build": "hexo generate",
