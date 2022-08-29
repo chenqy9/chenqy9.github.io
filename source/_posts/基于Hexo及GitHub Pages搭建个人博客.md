@@ -52,6 +52,9 @@ hexo init hexo-demo
 # 3. 安装依赖
 cd hexo-demo
 npm i
+
+# 4. 启动本地服务，访问http://localhost:4000/
+npm run server
 ```
 
 ## 配置博客
@@ -1217,6 +1220,9 @@ git add .
 git commit -m "更新博客"
 git push --set-upstream origin blog
 
+# 安装依赖
+npm install hexo-deployer-git
+
 # 执行部署
 npm run deploy
 ```
@@ -1225,4 +1231,43 @@ npm run deploy
 
 ## 增加本地搜索功能
 
-TODO
+`NexT`主题支持[搜索配置](https://theme-next.js.org/docs/third-party-services/search-services)，一种是基于第三方服务`Algolia`的搜索，一种是不需要依赖第三方服务的本地搜索。这里我选择了更简单和通用的本地搜索，配置如下：
+
+1. 安装依赖，该依赖并不是直接搜索的依赖，而是帮你生成搜索索引文件：
+
+``` bash
+npm install hexo-generator-searchdb
+```
+
+2. 修改博客配置文件`_config.yml`的搜索配置项，上面安装的插件基于该配置生成索引文件：
+
+``` yml
+search:
+  path: search.xml
+  field: post
+  # 这里选择false，只基于标题进行搜索
+  content: false
+  format: html
+```
+
+3. 修改主题配置文件`_config.next.yml`的搜索配置项，这里配置的是搜索UI组件：
+
+``` yml
+# Local Search
+# Dependencies: https://github.com/next-theme/hexo-generator-searchdb
+local_search:
+  enable: true
+  # If auto, trigger search by changing input.
+  # If manual, trigger search by pressing enter key or search button.
+  trigger: auto
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: -1
+  # Unescape html strings to the readable one.
+  unescape: false
+  # Preload the search data when the page loads.
+  preload: false
+```
+
+## 参考项目
+
+[hexo-demo](https://github.com/chenqy9/hexo-demo)
