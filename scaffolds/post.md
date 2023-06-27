@@ -4,5 +4,4 @@ date: {{ date }}
 categories:
   - 技术文档
 tags:
-toc: true
 ---
