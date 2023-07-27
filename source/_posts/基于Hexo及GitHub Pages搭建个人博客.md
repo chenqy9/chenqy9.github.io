@@ -2,7 +2,7 @@
 title: 基于Hexo及GitHub Pages搭建个人博客
 date: 2022-08-26
 categories:
-  - 教程文章
+  - 文章教程
 tags:
   - 博客
   - Hexo
