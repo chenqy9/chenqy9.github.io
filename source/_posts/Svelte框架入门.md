@@ -179,6 +179,16 @@ npm run build
 
 Svelte团队维护了一个VsCode的插件[Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)，支持语法提示、高亮、格式化等功能。
 
+## 总结
+
+- Svelte是一个编译时的响应式前端组件框架，目标是减少React，Vue等框架引入虚拟DOM和Diff实现响应式的性能损耗。  
+  
+- Svelte的实现原理理论上比React和Vue等框架性能要好，但是考虑到虚拟DOM技术的成熟和优化，客户端的硬件和网络资源提升，这部分的性能提升带来的收益或许不明显。  
+  
+- 当前要不要追求极致的性能而选择Svelte？我的答案是否定的。一是Svelte当前的成熟度和生态丰富度都没React和Vue好，开发体验和效率相对会没那么好；二是上面说了，Svelte带来的性能提升收益或许并不会那么明显。
+
+- 那我们要不要关注和学习Svelte? 我的答案是肯定的。Svelte框架背后的实现原理、思路以及技术都是值得我们去了解和学习的。而且未来Svelte的生态丰富了，或许开发体验和效率会越来越好，我们也多一种选择。总之，保持热爱，保持好奇，保持学习吧～
+
 ## 参考
 
 - [官方文档](https://svelte.dev/docs)
