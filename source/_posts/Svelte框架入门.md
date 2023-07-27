@@ -26,14 +26,14 @@ Svelte类似于React和Vue框架，提供模板语法和响应式编程。但是
    
 3. Vue和React虽然是引入虚拟DOM，需要Diff等逻辑维护和更新实际的DOM树，但是框架本身做了优化，Diff算法和更新策略也有很大的提升，所以性能上并没有感觉比原生的差很多。  
 
-虽然Vue和React如今已经满足了前端大部分的场景，Svelte的目标是最求更好的性能 ***(所以前端是真的卷，总有人乐此不疲的遭轮子，但也正是这些人在推动着前端的不断发展)*** 。Svelte提供类似Vue单文件组件的模板语法，然后编译成原生JavaScript，提供了一套相对于我们自己操作DOM，更优雅，更高效的更新方案。我们可以基于Svelte官网提供的[REPL](https://svelte.dev/repl/hello-world?version=4.1.1)直观的了解一下编译的过程：  
+虽然Vue和React如今已经满足了前端大部分的场景，Svelte的目标是追求更好的性能 ***(所以前端是真的卷，总有人乐此不疲的遭轮子，但也正是这些人在推动着前端的不断发展)*** 。Svelte提供类似Vue单文件组件的模板语法，然后编译成原生JavaScript，提供了一套相对于我们自己操作DOM，更优雅，更高效的更新方案。我们可以基于Svelte官网提供的[REPL](https://svelte.dev/repl/hello-world?version=4.1.1)直观的了解一下编译的过程：  
 
 组件文件源码，`App.svelte`实现了一个简单的点击按钮统计点击次数的功能。  
 
 ``` javascript
 // App.svelte
 <script>
-	let clickCount = 0;
+  let clickCount = 0;
 
 	function click() {
 		clickCount += 1;
