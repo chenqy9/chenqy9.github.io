@@ -83,7 +83,7 @@ this is <strong>parent</strong> text
 
 <script>
 const parentEl = document.getElementById('parent');
-console.log(parentEl.innerHTML);
+console.log(parentEl.innerText);
 </script>
 ```
 
@@ -124,7 +124,7 @@ this is child text
 
 <script>
 const parentEl = document.getElementById('parent');
-console.log(parentEl.innerHTML);
+console.log(parentEl.textContent);
 </script>
 ```
 
