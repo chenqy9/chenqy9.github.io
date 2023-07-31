@@ -196,4 +196,10 @@ Svelte团队维护了一个VsCode的插件[Svelte for VS Code](https://marketpla
 - [deep-dive-into-svelte](https://lihautan.com/deep-dive-into-svelte/)
 - [Svelte vs. React: A Comprehensive Comparison](https://www.okupter.com/blog/svelte-vs-react)
 
+## 联系我
+
+- [E-mail](mailto:chenqy9@foxmail.com)
+- [个人博客](https://chenqy9.github.io)
+
+
 
