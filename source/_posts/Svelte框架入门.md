@@ -200,6 +200,3 @@ Svelte团队维护了一个VsCode的插件[Svelte for VS Code](https://marketpla
 
 - [E-mail](mailto:chenqy9@foxmail.com)
 - [个人博客](https://chenqy9.github.io)
-
-
-
