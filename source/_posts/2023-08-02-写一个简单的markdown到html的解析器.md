@@ -8,12 +8,6 @@ tags:
 date: 2023-08-02 10:23:46
 ---
 
-## 联系我
-
-- [E-mail](mailto:chenqy9@foxmail.com)
-- [个人博客](https://chenqy9.github.io)
-
-
 ## markdown
 
 markdown是一种方便快捷的基于标签的文本格式化语法，类似于HTML超文本标志语言。事实上，很多markdown的解析器就是把markdown转换成html来显示的，特别是web端的markdown编辑器，基本上主流的开源库比如[marked](https://github.com/markedjs/marked)都是这样实现的。下面我们自己来实现一个简单的markdown到html的解析器。
