@@ -21,21 +21,73 @@ markdown是一种方便快捷的基于标签的文本格式化语法，类似于
 | # ~ ###### | 标题 | h1 ~ h6 |
 | \*text\* | 斜体 | em |
 | \*\*text\*\* | 加粗 | strong |
-| \`text\` | 代码 | code |
-| \+ \* \1. | 列表 | ul |
+| \`text\` | 高亮 | a |
 | \[text\]\(href\) | 链接 | a |
 
 ## markdown转html
 
 实现思路：  
 
-1. 用换行符`\n`对markdown文本进行分块
-2. 写markdown标签的正则表达式和对应的html标映射表
-3. 循环文本块进行正则匹配的字符串替换
+1. 写markdown标签的正则表达式和对应的html模板规则映射表
+2. 循环规则的正则进行正则匹配的字符串替换
 
 实现代码如下：  
 
+``` javascript
+const rules = [
+  // header rules
+  [/#{6}\s?([^\n]+)/g, "<h6>$1</h6>"],
+  [/#{5}\s?([^\n]+)/g, "<h5>$1</h5>"],
+  [/#{4}\s?([^\n]+)/g, "<h4>$1</h4>"],
+  [/#{3}\s?([^\n]+)/g, "<h3>$1</h3>"],
+  [/#{2}\s?([^\n]+)/g, "<h2>$1</h2>"],
+  [/#{1}\s?([^\n]+)/g, "<h1>$1</h1>"],
 
+  //bold, italics
+  [/\*\*\s?([^\n]+)\*\*/g, "<strong>$1</strong>"],
+  [/\*\s?([^\n]+)\*/g, "<em>$1</em>"],
+  
+  //links
+  [
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2">$1</a>',
+  ],
+
+  //highlights
+  [
+    /(`)(\s?[^\n,]+\s?)(`)/g,
+    '<a style="background-color:grey;color:black;text-decoration: none;border-radius: 3px;padding:0 2px;">$2</a>',
+  ],
+]
+
+function markdown2html(markdown = '') {
+  let html = markdown;
+  try {
+    rules.forEach(([rule, template]) => {
+      html = html.replace(rule, template);
+    });
+  } catch (error) {
+    console.error('转换失败：', error);
+  }
+  return html;
+}
+
+console.log(markdown2html(`
+# heading1
+## heading2
+### heading3
+#### heading4
+##### heading5
+###### heading6
+
+**strong**
+*em*
+
+[百度](https://www.baidu.com)
+
+\`highlight\`
+`));
+```
 
 ## 联系我
 
