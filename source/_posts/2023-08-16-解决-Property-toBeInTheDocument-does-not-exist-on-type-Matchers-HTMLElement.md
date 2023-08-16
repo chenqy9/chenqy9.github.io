@@ -1,7 +1,7 @@
 ---
 title: 解决 Property 'toBeInTheDocument' does not exist on type 'Matchers<HTMLElement>'
 categories:
-  - 技术文档
+  - 问题技巧
 tags:
   - pnpm
   - react
