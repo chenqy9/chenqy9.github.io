@@ -1,5 +1,5 @@
 ---
-title: 解决 Property 'toBeInTheDocument' does not exist on type 'Matchers<HTMLElement>'
+title: 解决 toBeInTheDocument does not exist
 categories:
   - 问题技巧
 tags:
