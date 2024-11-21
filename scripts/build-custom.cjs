@@ -1,0 +1,1 @@
+require('../source/static/iptv/utils/sync_source.cjs');
