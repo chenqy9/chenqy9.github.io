@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"chenqy9.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="关键词前端框架、编译器、响应式、模板 介绍Svelte &#x2F;svelt&#x2F; adj. 苗条的；线条清晰的；和蔼的Svelte是一个前端组件框架，就像它的英文名字一样，Svelte的目标是打造一个更高性能的响应性前端框架。Svelte类似于React和Vue框架，提供模板语法和响应式编程。但是有一个重要的区别：Svelte是一个编译时的框架，在编译的过程中生成组件运行时的代码并实现响">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Svelte框架入门">
+<meta property="og:url" content="https://chenqy9.github.io/2023/06/27/Svelte%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="小王子星球">
+<meta property="og:description" content="关键词前端框架、编译器、响应式、模板 介绍Svelte &#x2F;svelt&#x2F; adj. 苗条的；线条清晰的；和蔼的Svelte是一个前端组件框架，就像它的英文名字一样，Svelte的目标是打造一个更高性能的响应性前端框架。Svelte类似于React和Vue框架，提供模板语法和响应式编程。但是有一个重要的区别：Svelte是一个编译时的框架，在编译的过程中生成组件运行时的代码并实现响">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-27T07:37:23.000Z">
+<meta property="article:modified_time" content="2024-11-22T03:19:44.348Z">
+<meta property="article:author" content="小王子">
+<meta property="article:tag" content="前端框架">
+<meta property="article:tag" content="svelte">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://chenqy9.github.io/2023/06/27/Svelte%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chenqy9.github.io/2023/06/27/Svelte%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8/","path":"2023/06/27/Svelte框架入门/","title":"Svelte框架入门"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Svelte框架入门 | 小王子星球</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">小王子星球</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">道虽迩，不行不至，<br>事虽小，不为不成。</p>
+      <img class="custom-logo-image" src="/uploads/logo.jpeg" alt="小王子星球">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">40</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">22</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="nav-number">1.</span> <span class="nav-text">关键词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">开始使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8%E6%94%AF%E6%8C%81"><span class="nav-number">4.</span> <span class="nav-text">编辑器支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="nav-number">7.</span> <span class="nav-text">联系我</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">小王子</p>
+  <div class="site-description" itemprop="description">一只热爱生活的程序猿</div>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenqy9" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chenqy9" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:chenqy9@foxmail.com" title="E-Mail → mailto:chenqy9@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/chenqy9" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chenqy9.github.io/2023/06/27/Svelte%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小王子">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小王子星球">
+      <meta itemprop="description" content="一只热爱生活的程序猿">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Svelte框架入门 | 小王子星球">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Svelte框架入门
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-27 15:37:23" itemprop="dateCreated datePublished" datetime="2023-06-27T15:37:23+08:00">2023-06-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-11-22 11:19:44" itemprop="dateModified" datetime="2024-11-22T11:19:44+08:00">2024-11-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">技术文档</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>前端框架、编译器、响应式、模板</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Svelte &#x2F;svelt&#x2F; adj. 苗条的；线条清晰的；和蔼的<br>Svelte是一个前端组件框架，就像它的英文名字一样，Svelte的目标是打造一个更高性能的响应性前端框架。<br>Svelte类似于React和Vue框架，提供模板语法和响应式编程。但是有一个重要的区别：Svelte是一个编译时的框架，在编译的过程中生成组件运行时的代码并实现响应式，而React和Vue则是基于虚拟DOM及Diff实现运行时的响应式。<br>这正是Svelte宣传的提高性能的核心实现。我们知道，原生的性能肯定是最高的，没有中间多余的转换和对比等框架层的逻辑消耗性能。或许有同学就会问，那我们在JQuery时代写的代码性能不是更好吗？为什么感觉上却没有比react和Vue写的应用性能好呢。我想，这主要是以下几个原因：  </p>
+<ol>
+<li><p>现在的硬件和网络带宽等资源已经比以往有了大幅度的提升，所以就算应用的体积较以往比较大，相比硬件等资源的提升，反而会感觉上性能更好；  </p>
+</li>
+<li><p>JQuery是基于原生的DOM API封装和扩展了统一的接口，屏蔽了浏览器底层的差异。但是很多开发人员在使用时并没有考虑DOM变更对性能带来的影响，只是简单的用JQuery对DOM进行粗暴的全局更新；  </p>
+</li>
+<li><p>Vue和React虽然是引入虚拟DOM，需要Diff等逻辑维护和更新实际的DOM树，但是框架本身做了优化，Diff算法和更新策略也有很大的提升，所以性能上并没有感觉比原生的差很多。</p>
+</li>
+</ol>
+<p>虽然Vue和React如今已经满足了前端大部分的场景，Svelte的目标是追求更好的性能 <em><strong>(所以前端是真的卷，总有人乐此不疲的遭轮子，但也正是这些人在推动着前端的不断发展)</strong></em> 。Svelte提供类似Vue单文件组件的模板语法，然后编译成原生JavaScript，提供了一套相对于我们自己操作DOM，更优雅，更高效的更新方案。我们可以基于Svelte官网提供的<a target="_blank" rel="noopener" href="https://svelte.dev/repl/hello-world?version=4.1.1">REPL</a>直观的了解一下编译的过程：  </p>
+<p>组件文件源码，<code>App.svelte</code>实现了一个简单的点击按钮统计点击次数的功能。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.svelte</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">let</span> clickCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">click</span>(<span class="params"></span>) &#123;</span><br><span class="line">		clickCount += <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">on:click</span>=<span class="string">&quot;&#123; click &#125;&quot;</span>&gt;</span>click me &#123; clickCount &#125; &#123;  clickCount &gt; 1 ? &#x27;times&#x27; : &#x27;time&#x27; &#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-tag">button</span> &#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="attribute">cursor</span>: pointer;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>通过Svelte编译之后的代码如下，可以具体查看我的注释进行了解：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* App.svelte generated by Svelte v4.1.1 */</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">	<span class="title class_">SvelteComponent</span>,</span><br><span class="line">	append,</span><br><span class="line">	append_styles,</span><br><span class="line">	attr,</span><br><span class="line">	detach,</span><br><span class="line">	element,</span><br><span class="line">	init,</span><br><span class="line">	insert,</span><br><span class="line">	listen,</span><br><span class="line">	noop,</span><br><span class="line">	safe_not_equal,</span><br><span class="line">	set_data,</span><br><span class="line">	space,</span><br><span class="line">	text</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;svelte/internal&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;svelte/internal/disclose-version&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入组件样式，Svelte会自动生成一个全局唯一的类名</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add_css</span>(<span class="params">target</span>) &#123;</span><br><span class="line">	<span class="title function_">append_styles</span>(target, <span class="string">&quot;svelte-1hvi0n4&quot;</span>, <span class="string">&quot;button.svelte-1hvi0n4&#123;cursor:pointer&#125;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1、生成HTML片段</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">create_fragment</span>(<span class="params">ctx</span>) &#123;</span><br><span class="line">	<span class="keyword">let</span> button;</span><br><span class="line">	<span class="keyword">let</span> t0;</span><br><span class="line">	<span class="keyword">let</span> t1;</span><br><span class="line">	<span class="keyword">let</span> t2;</span><br><span class="line">	<span class="keyword">let</span> t3_value = (<span class="comment">/*clickCount*/</span> ctx[<span class="number">0</span>] &gt; <span class="number">1</span> ? <span class="string">&#x27;times&#x27;</span> : <span class="string">&#x27;time&#x27;</span>) + <span class="string">&quot;&quot;</span>;</span><br><span class="line">	<span class="keyword">let</span> t3;</span><br><span class="line">	<span class="keyword">let</span> mounted;</span><br><span class="line">	<span class="keyword">let</span> dispose;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="comment">// c --&gt; create 创建</span></span><br><span class="line">		<span class="title function_">c</span>(<span class="params"></span>) &#123;</span><br><span class="line">			button = <span class="title function_">element</span>(<span class="string">&quot;button&quot;</span>);</span><br><span class="line">			t0 = <span class="title function_">text</span>(<span class="string">&quot;click me &quot;</span>);</span><br><span class="line">			t1 = <span class="title function_">text</span>(<span class="comment">/*clickCount*/</span> ctx[<span class="number">0</span>]);</span><br><span class="line">			t2 = <span class="title function_">space</span>();</span><br><span class="line">			t3 = <span class="title function_">text</span>(t3_value);</span><br><span class="line">			<span class="title function_">attr</span>(button, <span class="string">&quot;class&quot;</span>, <span class="string">&quot;svelte-1hvi0n4&quot;</span>);</span><br><span class="line">		&#125;,</span><br><span class="line">    <span class="comment">// m --&gt; mount 挂载</span></span><br><span class="line">		<span class="title function_">m</span>(<span class="params">target, anchor</span>) &#123;</span><br><span class="line">			<span class="title function_">insert</span>(target, button, anchor);</span><br><span class="line">			<span class="title function_">append</span>(button, t0);</span><br><span class="line">			<span class="title function_">append</span>(button, t1);</span><br><span class="line">			<span class="title function_">append</span>(button, t2);</span><br><span class="line">			<span class="title function_">append</span>(button, t3);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 绑定事件</span></span><br><span class="line">			<span class="keyword">if</span> (!mounted) &#123;</span><br><span class="line">				dispose = <span class="title function_">listen</span>(button, <span class="string">&quot;click&quot;</span>, <span class="comment">/*click*/</span> ctx[<span class="number">1</span>]);</span><br><span class="line">				mounted = <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">    <span class="comment">// p --&gt; update 更新</span></span><br><span class="line">		<span class="title function_">p</span>(<span class="params">ctx, [dirty]</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (dirty &amp; <span class="comment">/*clickCount*/</span> <span class="number">1</span>) <span class="title function_">set_data</span>(t1, <span class="comment">/*clickCount*/</span> ctx[<span class="number">0</span>]);</span><br><span class="line">			<span class="keyword">if</span> (dirty &amp; <span class="comment">/*clickCount*/</span> <span class="number">1</span> &amp;&amp; t3_value !== (t3_value = (<span class="comment">/*clickCount*/</span> ctx[<span class="number">0</span>] &gt; <span class="number">1</span> ? <span class="string">&#x27;times&#x27;</span> : <span class="string">&#x27;time&#x27;</span>) + <span class="string">&quot;&quot;</span>)) <span class="title function_">set_data</span>(t3, t3_value);</span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="attr">i</span>: noop,</span><br><span class="line">		<span class="attr">o</span>: noop,</span><br><span class="line">    <span class="comment">// d --&gt; destroy 销毁</span></span><br><span class="line">		<span class="title function_">d</span>(<span class="params">detaching</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (detaching) &#123;</span><br><span class="line">				<span class="title function_">detach</span>(button);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			mounted = <span class="literal">false</span>;</span><br><span class="line">			<span class="title function_">dispose</span>();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例，对应上面的ctx传参数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">instance</span>(<span class="params">$$self, $$props, $$invalidate</span>) &#123;</span><br><span class="line">	<span class="keyword">let</span> clickCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">click</span>(<span class="params"></span>) &#123;</span><br><span class="line">		$$invalidate(<span class="number">0</span>, clickCount += <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> [clickCount, click];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">SvelteComponent</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">options</span>) &#123;</span><br><span class="line">		<span class="variable language_">super</span>();</span><br><span class="line">		<span class="title function_">init</span>(<span class="variable language_">this</span>, options, instance, create_fragment, safe_not_equal, &#123;&#125;, add_css);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p>官方推荐使用<a target="_blank" rel="noopener" href="https://kit.svelte.dev/">SvelteKit</a>来创建Svelte应用项目，具体命令如下：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm create svelte@latest svelte-demo</span><br><span class="line"><span class="built_in">cd</span> svelte-demo</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>Svelte会将.svelte组件文件编译成.js文件去创造真实的DOM和对应的.css样式文件，工具同时提供了开发服务器、路由、编译部署、SSR等支持。SvelteKit利用<a target="_blank" rel="noopener" href="https://vitejs.dev/">Vite</a>去编译代码。  </p>
+<p>如果你不想使用SvelteKit，你还可以通过Vite来创建Svelte应用项目，具体命令如下：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选择svelte模板</span></span><br><span class="line">npm init vite</span><br><span class="line"><span class="comment"># 生成HTML，JS，CSS文件到dist文件夹</span></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<h2 id="编辑器支持"><a href="#编辑器支持" class="headerlink" title="编辑器支持"></a>编辑器支持</h2><p>Svelte团队维护了一个VsCode的插件<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode">Svelte for VS Code</a>，支持语法提示、高亮、格式化等功能。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>Svelte是一个编译时的响应式前端组件框架，目标是减少React，Vue等框架引入虚拟DOM和Diff实现响应式的性能损耗。  </p>
+</li>
+<li><p>Svelte的实现原理理论上比React和Vue等框架性能要好，但是考虑到虚拟DOM技术的成熟和优化，客户端的硬件和网络资源提升，这部分的性能提升带来的收益或许不明显。  </p>
+</li>
+<li><p>当前要不要追求极致的性能而选择Svelte？我的答案是否定的。一是Svelte当前的成熟度和生态丰富度都没React和Vue好，开发体验和效率相对会没那么好；二是上面说了，Svelte带来的性能提升收益或许并不会那么明显。</p>
+</li>
+<li><p>那我们要不要关注和学习Svelte? 我的答案是肯定的。Svelte框架背后的实现原理、思路以及技术都是值得我们去了解和学习的。而且未来Svelte的生态丰富了，或许开发体验和效率会越来越好，我们也多一种选择。总之，保持热爱，保持好奇，保持学习吧～</p>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://svelte.dev/docs">官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://svelte.dev/blog/svelte-3-rethinking-reactivity">Svelte 3: Rethinking reactivity</a></li>
+<li><a target="_blank" rel="noopener" href="https://lihautan.com/deep-dive-into-svelte/">deep-dive-into-svelte</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.okupter.com/blog/svelte-vs-react">Svelte vs. React: A Comprehensive Comparison</a></li>
+</ul>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><ul>
+<li><a href="mailto:chenqy9@foxmail.com">E-mail</a></li>
+<li><a href="https://chenqy9.github.io/">个人博客</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag"># 前端框架</a>
+              <a href="/tags/svelte/" rel="tag"># svelte</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/26/%E5%9F%BA%E4%BA%8EHexo%E5%8F%8AGitHub-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="基于Hexo及GitHub Pages搭建个人博客">
+                  <i class="fa fa-chevron-left"></i> 基于Hexo及GitHub Pages搭建个人博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/07/27/innerHtml-innerText-textContent/" rel="next" title="innerHTML innerText textContent对比">
+                  innerHTML innerText textContent对比 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小王子</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
