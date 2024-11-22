@@ -50,10 +50,10 @@ const main = async () => {
 
   // 直播源文件下载列表
   const sourceFileLinkList = [
-    // 国内直播，有珠江台
-    'https://live.zbds.top/tv/iptv6.m3u',
     // 港澳直播，有翡翠台
     'https://aktv.top/live.m3u',
+    // 国内直播，有珠江台
+    'https://live.zbds.top/tv/iptv6.m3u',
   ];
 
   await createFileOrClearContent(targetFilePath);
